@@ -1,0 +1,28 @@
+{% extends "templates/partials/base.html" %}
+
+{% block content %}
+
+  {# MERGE A BUNCH OF CMS CONTENT TOGETHER INTO ONE FEED #}
+  {% set editorial = merge(cms.recipes) %}
+  {% set editorial = editorial|sort('publish_date', true) %}
+  {# INFINITE SCROLL BY 10 #}
+  {% set editorial = paginate(editorial, 10) %}
+
+    {% for item in editorial %}
+      {# GALLERY #}
+      {% if item._type == "recipes" %}
+        {% include "templates/partials/li_recipe.html" %}
+     {#  {# ARTICLE #}
+      {% elseif item._type == "article" %}
+        {% include "templates/partials/li_article.html" %}
+      {# LINK #}
+      {% elseif item._type == "link" %}
+        {% include "templates/partials/li_link.html" %}
+      {# VIDEO #}
+      {% elseif item._type == "video" %}
+        {% include "templates/partials/li_video.html" %} #}
+      {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block scripts_extra %}{% endblock %}

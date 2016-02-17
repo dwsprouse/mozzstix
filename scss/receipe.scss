@@ -1,0 +1,368 @@
+@font-face {
+   font-family: LEngineer;
+   src: url(../fonts/LEngineer-Regular.otf);
+   font-weight: normal;
+}
+
+$bkgd-color: #ffcc33;
+$dash-color: #e0b32a;
+$star-color: #cc9900;
+$comment-font-color: #ff6600;
+$spacing: 30px;
+$gutter: 60px;
+$gutter-md: 30px;
+$gutter-sm: 10px;
+$offset: 10px;
+$duration: .2s;
+$default-primary-color: #ff6600;
+$default-secondary-color: #cc3300;
+$default-bkgd-color: #ffcc00;
+$default-text-color: #fff;
+$hero-height-lg: 420px;
+$hero-height-md: 380px;
+$hero-height-sm: 320px;
+
+
+/*
+ * -- BASE STYLES --
+ */
+
+ html, button, input, select, textarea, li .banner-head
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family:'Open Sans', sans-serif;
+    color: #333;
+}
+
+body {
+    background-color: $bkgd-color;
+}
+hr {
+	margin-top: $spacing;
+	border: 0;
+	border-bottom: (3px dashed $dash-color)
+}
+
+/*
+ * -- LAYOUT STYLES --
+ */
+img {
+	width: 100%;
+}
+.pure-g > div {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.l-content {
+	max-width: 960px;
+	margin: 0 auto;
+}
+.l-box {
+	padding: 1em;
+}
+td {
+	padding-bottom: 10px;
+}
+.amount {
+	text-align: right;
+	padding-right: 10px;
+	font-weight: 800;
+	vertical-align: top;
+	white-space: nowrap;
+}
+ol, ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+li {
+}
+.box-header {
+	margin-bottom: $spacing;
+}
+.margin-top-bottom {
+	margin: 50px 0;
+}
+// section {
+// 	display: table;
+// 	table-layout: fixed;
+// }
+// .tr {
+// 	display: table-row;
+// }
+// .td {
+// 	display: table-cell;
+// 	padding-bottom: 10px;
+// }
+
+
+.directions li {
+	counter-increment: step-counter;
+	font-weight: 400;
+	line-height: 1.2;
+	clear: left;
+	padding-bottom: 20px;
+
+}
+li div {
+overflow: hidden;
+line-height: 1.2;
+
+}
+.directions li:before {
+	content: counter(step-counter);
+	margin: -12px 20px 0 0;
+	font-size: 4em;
+	font-family:'Open Sans', sans-serif;
+	font-weight: 800;
+	color: white;
+	float: left;
+}
+// .directions li:after {
+// 	overflow: hidden;
+// }
+table {
+	border: 0;
+	// border: (3px dashed #e0b32a);
+}
+
+
+/*
+ * -- FONT STYLES --
+ */
+
+h1, h2, h3, h4, p {
+	font-family:'Open Sans', sans-serif;
+}
+h1, h2 {
+	color: #fff;
+	font-weight: 800;
+	margin: 0;
+}
+h1 {
+	font-size: 4.5em;
+	font-weight: 800;
+	line-height: 1em;
+	letter-spacing: -1px;
+}
+.title h1 {
+	// text-transform: uppercase;
+
+}
+h2 {
+	font-size: 2em;
+	margin-bottom: 0;
+}
+h2.quote {
+	font-family: 'LEngineer', 'Open Sans', sans-serif;
+	// color: $cream;
+	font-weight: normal;
+	font-size: 72px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	// line-height: 72px;
+}
+.comment h3, .comment p {
+	color: $comment-font-color;
+}
+.comment h3 {
+	font-family:'LEngineer', sans-serif;
+	font-size: 2em;
+	line-height: 1em;
+	margin: 0 0 .8em 0;
+}
+span {
+	font-weight: 800;
+}
+.ingredients span {
+	width: 30px;
+}
+p, td, li, div {
+	font-family:'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 34px;
+	letter-spacing: 1px;
+}
+td {
+		padding: 15px 0;
+		line-height: 26px;
+}
+
+/*
+ * -- HERO & RECIPE INFO --
+ */
+
+.hero {
+	height: 470px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: $spacing;
+}
+.slant {
+	position: absolute;
+	top: 420;
+}
+.title-area {
+	position: relative;
+	height: 100%;
+	width: 60%;
+	background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,0));
+	// background-color: red;
+}
+.title {
+	margin-left: $gutter;
+	position: absolute;
+	width: 50%;
+	min-width: 400px;
+	// background-color: green;
+	top: 50%;
+	transform: translate(0%, -50%);
+	color: white;
+}
+.recipe-info {
+	position: absolute;
+	right: 0;
+	top: 300px;
+	display: table;
+	background-color: ffffcc;
+	padding: 10 60 10 30;
+	color: #ff6633;
+}
+.recipe-info span {
+	font-weight: 800;
+	margin-right: 10px;
+}
+
+/*
+ * -- RATING --
+ */
+
+.rating-wrapper {
+	position: relative;
+	display: table;
+	margin: 0 auto;
+	text-align: center;
+}
+.comment .rating-wrapper {
+	position: relative;
+	display: table;
+	margin: 0;
+}
+.rating {
+	color: rgba(0,0,0, .2);
+	display: table;
+	&:after {
+		left: 0px;
+		content: "\2605 \2605 \2605 \2605 \2605";
+		position: absolute;
+		overflow: hidden;
+	}
+}
+@mixin rating-generator ($width, $star-size, $star-color) {
+	@extend .rating;
+	font-size: $star-size;
+	&:after {
+		width: $width;
+		color: $star-color;
+	}
+}
+.rating-1 {@include rating-generator(20%, 4em, #ff6600);}
+.rating-2 {@include rating-generator(40%, 4em, #ff6600);}
+.rating-3 {@include rating-generator(60%, 4em, #ff6600);}
+.rating-4 {@include rating-generator(80%, 4em, #ff6600);}
+.rating-5 {@include rating-generator(100%, 4em, #ff6600);}
+
+.comment .rating-1 {font-size: 2em;}
+.comment .rating-2 {font-size: 2em;}
+.comment .rating-3 {font-size: 2em;}
+.comment .rating-4 {font-size: 2em;}
+.comment .rating-5 {font-size: 2em;}
+
+/*
+ * -- BUTTON --
+ */
+
+.button {
+	will-change: transform;
+	margin-top: $spacing;
+	margin-bottom: $offset;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	background-color: $default-primary-color;
+	padding: 20px 40px 20px 40px;
+	transform: translate(-$offset/2, 0%);
+	transition: transform $duration ease-out;
+}
+.button:before, .button:after {
+	content: '';
+	position: absolute;
+	border: $offset solid transparent;
+	// will-change: border-left-width, border-top-width;
+}
+.button:before{
+	top: 0px;
+	left: 100%;
+	width: 0px;
+	height: 100%;
+	border-bottom-width: 0px;
+	border-left-color: $default-secondary-color;
+	border-top-width: $offset;
+	transition: border-left-width $duration, border-top-width $duration;
+}
+.button:after{
+	width: 100%;
+	height: 0px;
+	top: 100%;
+	left: 0px;
+	border-left-width: $offset;
+	border-right-width: 0px;
+	border-top-width: $offset;
+	border-top-color: $default-secondary-color;
+	transition: border-left-width $duration, border-top-width $duration;
+}
+.button h2 {
+	margin: 0;
+}
+.button a {
+	text-decoration: none;
+}
+/*
+ * -- TABLET MEDIA QUERIES --
+ */
+
+@media(max-width: 767px) {
+	.hero {
+		height: $hero-height-md;
+		margin-bottom: 0;
+	}
+	.title {
+		margin-left: $gutter-md;
+	}
+	.recipe-info {
+		position: relative;
+		top: 0;
+		right: initial;
+		width: 100%;
+		color: #ff6633;
+		padding: 10 0 10 $gutter-md;
+	}
+
+}
+
+/*
+ * -- PHONE MEDIA QUERIES --
+ */
+
+@media (max-width: 480px) {
+    .banner {
+        height: 400px;
+    }
+    .banner-head {
+        font-size: 3em;
+    }
+}

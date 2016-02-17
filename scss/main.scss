@@ -1,0 +1,324 @@
+$margin-left-lg: 80px;
+$margin-left-md: 40px;
+$margin-left-sm: 10px;
+
+$default-primary-color: #ff6600;
+$default-secondary-color: #cc3300;
+$default-bkgd-color: #ffcc00;
+$default-text-color: #fff;
+$offset: 7px;
+$spacing: 20px;
+$dim-amount: 0.2;
+$duration: 0.15s;
+
+$h1-xl: 4em; 
+$h1-lg: 3.4em; 
+$h1-md: 3em; 
+$h1-sm: 2.6em; 
+$yellow: #ffcc00;
+$dark-yellow: #cc9900; 
+$orange: #ff6600;
+$dark-orange: #cc3300;
+
+@font-face {
+   font-family: LEngineer;
+   src: url(../fonts/LEngineer-Regular.otf);
+   font-weight: normal;
+}
+
+
+/* Page Format ----------------------------------*/
+
+html {
+	min-width: 320px;
+	font-family: Open Sans;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	color: white;
+	margin: 0;
+}
+
+.promo {
+	width: 100%;
+	height: 640px;
+	margin-bottom: 8px;
+	position: relative;
+}
+.overlay {
+	width: 100%;
+	height: 100%;
+}
+.label {
+	position: absolute;
+	top: 50px;
+	left: $margin-left-lg;
+}
+.promo-content-wrapper {
+	display: table;
+	margin: 0 auto;
+	height: 100%;
+}
+.split-top {
+	display: table-row;
+}
+.split-bottom {
+	display: none;
+}
+.promo-content {
+	display: table-cell;
+	padding: 0 $margin-left-lg;
+	vertical-align: middle;
+	text-align: center;
+	max-width: 800px;
+ }
+.image {
+	background-size: cover;
+	background-position: right;
+	// background-image: url("../images/parm-crusted-mozzstix.jpg");
+}
+.solid {
+	background: orange;
+}
+.dim {
+	.overlay {
+		background:rgba(0,0,0,.6);
+	}
+}
+.left-align {
+	.promo-content-wrapper {margin: 0;}
+	.promo-content {
+		text-align: left;
+		max-width: 480px;
+	}
+}
+.gradient {
+	.promo-content {background: linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,0));}
+}
+
+
+/* Text Format ----------------------------------*/
+
+.label {
+	border-left: solid;
+	border-width: 6px;
+	padding-left: 8px;
+	text-align: left;
+}
+h1, h2, h3, h4, p {
+	margin: 0;
+	padding: 0;
+    font-weight: 800;
+    line-height: 1em;
+}
+h1 {
+	font-size: $h1-xl;
+	letter-spacing: -.5px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+h1.quote {
+	font-family: LEngineer;
+	font-weight: normal;
+	font-size: $h1-xl * 1.5;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+h1.star-rating {
+	margin-bottom: 20px;
+}
+h2 {
+	font-size: $h1-md * .46;
+	text-transform: uppercase;
+}
+h3 {
+	font-size: $h1-xl * .38;
+}
+h4 {
+	font-size: $h1-md * .35;
+	text-transform: uppercase;
+	color: $dark-orange;
+}
+p {
+	font-size: $h1-md * .46;
+	margin-bottom: 30px;
+}
+.venue {
+	text-transform: uppercase;
+}
+.venue-location {
+	font-weight: 300;
+}
+
+/* Rating ----------------------------------*/
+
+.rating {
+	color: rgba(0,0,0, .2);
+	&:after {
+		left: 0;
+		content: "\2605 \2605 \2605 \2605 \2605";
+		position: absolute;
+		overflow: hidden;
+	}
+}
+.rating-wrapper {
+	position: relative;
+	display: table;
+	margin: 0 auto;
+	text-align: center;
+}
+@mixin rating-generator ($width, $star-color) {
+	@extend .rating;
+	&:after {
+		width: $width;
+		color: $star-color;
+	}
+}
+.rating-1 {@include rating-generator(20%, $yellow);}
+.rating-2 {@include rating-generator(40%, $yellow);}
+.rating-3 {@include rating-generator(60%, $yellow);}
+.rating-4 {@include rating-generator(80%, $yellow);}
+.rating-5 {@include rating-generator(100%, $yellow);}
+
+
+/* Button ----------------------------------*/
+
+.button {
+	will-change: transform;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	background-color: $default-primary-color;
+	padding: 14px 24px;
+	transition: transform $duration;
+}
+.button:before, .button:after {
+	content: '';
+	position: absolute;
+	border: $offset solid transparent;
+	will-change: border-left-width, border-top-width;
+}
+.button:before{
+	top: 0px;
+	left: 100%;
+	width: 0px;
+	height: 100%;
+	border-bottom-width: 0px;
+	border-left-color: $default-secondary-color;
+	border-top-width: $offset;
+	transition: border-left-width $duration, border-top-width $duration;
+}
+.button:after{
+	width: 100%;
+	height: 0px;
+	top: 100%;
+	left: 0px;
+	border-left-width: $offset;
+	border-right-width: 0px;
+	border-top-width: $offset;
+	border-top-color: $default-secondary-color;
+	transition: border-left-width $duration, border-top-width $duration;
+}
+.button:hover {
+	transform: translate($offset, $offset);
+}
+.button:hover:before, .button:hover:after {
+	border-left-width: 0;
+	border-top-width: 0;
+}
+
+
+/* Page Format Media Queries ----------------------------------*/
+
+@media(max-width: 1024px) {
+	.promo {
+		height: 560px;
+	}
+	.promo-content {
+		max-width: 650px;
+	}
+	.left-align {.promo-content{max-width: 420px;}}
+}
+@media(max-width: 768px) {
+	.promo {
+		height: 480px;
+	}
+	.promo-content {
+		max-width: 500px;
+		padding: 20px $margin-left-md;
+	}
+	.left-align {.promo-content{max-width: 360px;}}
+	.label {
+		left: $margin-left-md;
+		top: 20px;
+	}
+}
+@media(max-width: 568px) {
+	.promo-content-wrapper {
+		width: 100%;
+	}
+	.promo-content {
+		max-width: initial;
+		padding: 0 $margin-left-sm;
+	}
+	.label {
+		top: 10px;
+		left: $margin-left-sm;
+	}
+	//On phone, left-align reverts to center
+	.left-align {
+		.promo-content-wrapper {margin: 0 auto;}
+		.promo-content {text-align: center;}
+	}
+	//On phone, gradient turns into a dim
+	.gradient {
+		.promo-content {background:rgba(0,0,0,.6);}
+	}
+	.split {
+		.split-bottom{
+			display: table-row;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			// background-image: url("../images/parm-crusted-mozzstix-mobile.jpg");
+		}
+		.promo-content {
+			background-color: orange;
+			padding: 50px $margin-left-sm 0px $margin-left-sm;
+		}
+		.slant {
+			fill: orange;
+		}
+		.button-wrapper {
+			display: relative;
+			position: absolute;
+			bottom: 30px;
+			left: 0px;
+			right: 0px;
+			margin: 0 auto; 
+		}
+	}
+}
+
+
+/* Text Size Media Queries ----------------------------------*/
+
+@media(max-width: 1024px) {
+	h1 {font-size: $h1-lg;}
+	h1.quote {font-size: $h1-lg * 1.5;}
+	h3 {font-size: $h1-lg * .46;}
+}
+@media(max-width: 768px) {
+	h1 {font-size: $h1-md;}
+	h1.quote {font-size: $h1-md * 1.5;}
+	h3 {font-size: $h1-md * .46;}
+}
+@media(max-width: 568px) {
+	h1 {font-size: $h1-sm;}
+	h1.quote {font-size: $h1-sm * 1.5;}
+	h2, p {font-size: $h1-sm * .46;}
+	// h3 {font-size: $h1-sm * .38;}
+	h4 {font-size: $h1-sm * .35;}
+}
