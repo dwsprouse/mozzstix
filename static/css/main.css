@@ -287,6 +287,17 @@ p {
   border-left-width: 0;
   border-top-width: 0; }
 
+/* Themes ----------------------------------*/
+.default body {
+  color: #fff; }
+.default h1 {
+  color: #fff; }
+
+.black body {
+  color: #000; }
+.black h1 {
+  color: #000; }
+
 /* Page Format Media Queries ----------------------------------*/
 @media (max-width: 1024px) {
   .promo {

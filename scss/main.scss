@@ -329,6 +329,24 @@ p {
 	border-top-width: 0;
 }
 
+/* Themes ----------------------------------*/
+
+@mixin theme-generator ($color-primary, $color-secondary, $color-bkgd, $color-text) {
+	// @extend .rating;
+	// &:after {
+	// 	width: $width;
+	// 	color: $star-color;
+	// }
+	body {
+		color: $color-text;
+	}
+	h1 {
+		color: $color-text;
+	}
+}
+.default {@include theme-generator(#ff6600, #cc3300, #ffcc00, #fff);}
+.black {@include theme-generator(#ff6600, #cc3300, #ffcc00, #000);}
+
 
 /* Page Format Media Queries ----------------------------------*/
 
