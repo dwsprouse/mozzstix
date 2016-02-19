@@ -1,8 +1,11 @@
 <nav>
 	<div class="nav-items-wrapper">
 		<ul id="nav-items">
-			{% if cms.recipes|size > 0 %}
-			<li><a href="recipe.html">Recipe</a></li>
+			{% if cms.recipe|size > 0 %}
+			<li><a href="recipe.html">Recipes</a></li>
+			{% endif %}
+			{% if cms.review|size > 1 %}
+			<li><a href="recipe.html">Reviews</a></li>
 			{% endif %}
 			<li><a href="/about/">About</a></li>
 			<li><a href="/contact/">Contact</a></li>

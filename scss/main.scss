@@ -329,23 +329,35 @@ p {
 	border-top-width: 0;
 }
 
+
 /* Themes ----------------------------------*/
 
 @mixin theme-generator ($color-primary, $color-secondary, $color-bkgd, $color-text) {
-	// @extend .rating;
-	// &:after {
-	// 	width: $width;
-	// 	color: $star-color;
-	// }
-	body {
+	h1, h2, h3, h4 {
 		color: $color-text;
+		.star-rating {
+			color: rgba(0,0,0, .2);
+		}
 	}
-	h1 {
-		color: $color-text;
+	&.solid {
+		background: $color-bkgd;
+	}
+	.label {
+		color: $color-secondary;
+	}
+	.button {
+		background-color: $color-primary;
+		&:before{
+			border-left-color: $color-secondary;
+		}
+		&:after{
+			border-top-color: $color-secondary;
+		}
 	}
 }
-.default {@include theme-generator(#ff6600, #cc3300, #ffcc00, #fff);}
-.black {@include theme-generator(#ff6600, #cc3300, #ffcc00, #000);}
+.velveta {@include theme-generator(#ff6600, #cc3300, orange, #fff);}
+.ketchup {@include theme-generator(#cc0000, #660000, #cc6666, #fff);}
+.lettuce {@include theme-generator(#009933, #003300, #669966, #fff);}
 
 
 /* Page Format Media Queries ----------------------------------*/

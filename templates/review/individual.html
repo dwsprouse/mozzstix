@@ -35,6 +35,10 @@
         {{ item.publish_date|date('F d Y') }}
       </li>
       <li>
+        <strong>Theme: </strong>
+        {{ item.theme }}
+      </li>
+      <li>
         <strong>Neighborhood: </strong>
         {{ item.neighborhood }}
       </li>
@@ -49,6 +53,14 @@
       <li>
         <strong>Promo CTA: </strong>
         {{ item.promo_cta }}
+      </li>
+      <li>
+        <strong>Preview URL: </strong>
+        {{ item.preview_url }}
+      </li>
+      <li>
+        <strong>Slug: </strong>
+        {{ item.slug }}
       </li>
   </ul>
 {% endblock %}
