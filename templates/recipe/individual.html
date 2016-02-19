@@ -1,6 +1,6 @@
 {# ------------------------------------------------------- #}
-{# INDIVIDUAL VIEW FOR EACH recipes #}
-{# This page can use any data from http:localhost:2000/cms/#/form/recipes/ #}
+{# INDIVIDUAL VIEW FOR EACH recipe #}
+{# This page can use any data from http:localhost:2000/cms/#/form/recipe/ #}
 {# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
 {# http://paularmstrong.github.io/swig/docs/tags/ #}
 {# Learn about calling data into Webhook pages here: #}
@@ -9,10 +9,10 @@
 {# Confused what extends and blocks do? Watch a primer: #}
 {# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
-{# This sets our page <title>. It will append this recipes's name to the site title defined in base.html #}
+{# This sets our page <title>. It will append this recipe's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-  <p><a href="{{ url('recipes') }}">View a list of all recipes</a></p>
+  <p><a href="{{ url('recipe') }}">View a list of all recipe</a></p>
   <h1>{{ item.name }}</h1>
   <ul>
       <li>
@@ -35,57 +35,24 @@
         {{ item.publish_date|date('F d Y') }}
       </li>
       <li>
-        <strong>Web image: </strong>
+        <strong>: </strong>
         {# You can pull out a lot more information from the image property. Info here: #}
         {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <img src="{{ item.web_image|imageSize(200, 200) }}" />
+        <img src="{{ item.image|imageSize(200, 200) }}" />
       </li>
       <li>
-        <strong>Mobile image: </strong>
+        <strong>Split Image: </strong>
         {# You can pull out a lot more information from the image property. Info here: #}
         {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <img src="{{ item.mobile_image|imageSize(200, 200) }}" />
+        <img src="{{ item.split_image|imageSize(200, 200) }}" />
       </li>
       <li>
-        <strong>Promo text: </strong>
+        <strong>Promo Text: </strong>
         {{ item.promo_text }}
       </li>
       <li>
-        <strong>Call to action: </strong>
-        {{ item.call_to_action }}
-      </li>
-      <li>
-        <strong>Description: </strong>
-        {{ item.description }}
-      </li>
-      <li>
-        <strong>Ingredients: </strong>
-        {# Output tablular data. Note that it's up to you to output the thead manually. This just output the data. #}
-        <table>
-          <tbody>
-            {% for key, row in item.ingredients %}
-              <tr>
-                {% for key, cell in row %}
-                  <td>
-                    {{ cell }}
-                  </td>
-                {% endfor %}
-              </tr>
-            {% endfor%}
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <strong>Instructions: </strong>
-        {{ item.instructions|safe }}
-      </li>
-      <li>
-        <strong>Preview URL: </strong>
-        {{ item.preview_url }}
-      </li>
-      <li>
-        <strong>Slug: </strong>
-        {{ item.slug }}
+        <strong>Promo CTA: </strong>
+        {{ item.promo_cta }}
       </li>
   </ul>
 {% endblock %}
