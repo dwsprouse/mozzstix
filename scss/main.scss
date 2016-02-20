@@ -1,6 +1,6 @@
 $margin-left-lg: 80px;
 $margin-left-md: 40px;
-$margin-left-sm: 10px;
+$margin-left-sm: 20px;
 
 $default-primary-color: #ff6600;
 $default-secondary-color: #cc3300;
@@ -73,7 +73,7 @@ body {
 }
 .hero {
 	@extend .promo;
-	height: 400px;
+	height: 450px;
 }
 .hero-content-wrapper {
 	@extend .promo-content-wrapper;
@@ -401,28 +401,27 @@ ol, ul {
 
 .bottom-slant {
 	position: absolute;
-	top: 350px;
+	top: 400px;
 }
 .top-slant {
 	position: absolute;
 	top: 0px;
 }
-.recipe-info {
+#ingredients, #directions, #recipe-info {
+	display: table;
+}
+#recipe-info {
 	position: absolute;
-	right: 0;
-	top: 250px;
-	display: table;
+	top: 300px;
+	right: 0px;
 	background-color: #ffffcc;
-	padding: 10px 60px 10px 30px;
-	color: #ff6633;
-	text-decoration: none;
-}
-.recipe-info span {
-	font-weight: 800;
-	margin-right: 10px;
-}
-#ingredients, #directions {
-	display: table;
+	padding: 10px 40px;
+	.cell {
+		padding: 0px 5px;
+		p {
+			line-height: 26px;
+		}
+	}
 }
 .step-num {
 	h1 {
@@ -475,6 +474,16 @@ ol, ul {
 	.promo {
 		height: 560px;
 	}
+	.hero {
+		height: 400px;
+	}
+	.bottom-slant {
+		position: absolute;
+		top: 350px;
+	}
+	#recipe-info {
+		top: 250px;
+	}
 	.promo-content {
 		max-width: 650px;
 	}
@@ -483,6 +492,9 @@ ol, ul {
 @media(max-width: 768px) {
 	.promo {
 		height: 480px;
+	}
+	.hero {
+		height: 400px;
 	}
 	.promo-content {
 		max-width: 500px;
@@ -503,7 +515,7 @@ ol, ul {
 		padding: 0 $margin-left-sm;
 	}
 	.label {
-		top: 10px;
+		top: 20px;
 		left: $margin-left-sm;
 	}
 	//On phone, left-align reverts to center
@@ -538,6 +550,17 @@ ol, ul {
 			right: 0px;
 			margin: 0 auto; 
 		}
+	}
+	// Recipe page
+	.bottom-slant {
+		visibility: hidden;
+	}
+	#recipe-info {
+		position: relative;
+		top: initial;
+		right: intiial;
+		width: 100%;
+		padding: 10px 0px;
 	}
 }
 

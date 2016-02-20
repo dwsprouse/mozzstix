@@ -24,11 +24,20 @@
   <svg class="bottom-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
       <polygon points="0,0 50,50 0,50"/>
   </svg>
-  <ul class="recipe-info">
-    <li><span>Total time</span>{{ item.total_time }}</li>
-    <li><span>Yield</span>{{ item.yield }}</li>
-    <li><span>Skill Level</span>{{ item.skill_level }}</li>
-  </ul>
+</div>
+<div id="recipe-info">
+  <div class="row">
+    <div class="cell no-wrap"><p><strong>Total time</strong></p></div>
+    <div class="cell"><p>{{ item.total_time }}</p></div>
+  </div>
+  <div class="row">
+    <div class="cell no-wrap"><p><strong>Yield</strong></p></div>
+    <div class="cell"><p>{{ item.yield }}</p></div>
+  </div>
+  <div class="row">
+    <div class="cell no-wrap"><p><strong>Skill Level</strong></p></div>
+    <div class="cell"><p>{{ item.skill_level }}</p></div>
+  </div>
 </div>
 
 <div class="content-wrapper margin-top-bottom">

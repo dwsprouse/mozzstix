@@ -43,7 +43,7 @@ body {
   max-width: 800px; }
 
 .hero {
-  height: 400px; }
+  height: 450px; }
 
 .split-top {
   display: table-row; }
@@ -355,28 +355,25 @@ ol, ul {
 /* Recipe Detail Page ----------------------------------*/
 .bottom-slant {
   position: absolute;
-  top: 350px; }
+  top: 400px; }
 
 .top-slant {
   position: absolute;
   top: 0px; }
 
-.recipe-info {
-  position: absolute;
-  right: 0;
-  top: 250px;
-  display: table;
-  background-color: #ffffcc;
-  padding: 10px 60px 10px 30px;
-  color: #ff6633;
-  text-decoration: none; }
-
-.recipe-info span {
-  font-weight: 800;
-  margin-right: 10px; }
-
-#ingredients, #directions {
+#ingredients, #directions, #recipe-info {
   display: table; }
+
+#recipe-info {
+  position: absolute;
+  top: 300px;
+  right: 0px;
+  background-color: #ffffcc;
+  padding: 10px 40px; }
+  #recipe-info .cell {
+    padding: 0px 5px; }
+    #recipe-info .cell p {
+      line-height: 26px; }
 
 .step-num h1 {
   line-height: 38px; }
@@ -448,6 +445,16 @@ ol, ul {
   .promo, .hero {
     height: 560px; }
 
+  .hero {
+    height: 400px; }
+
+  .bottom-slant {
+    position: absolute;
+    top: 350px; }
+
+  #recipe-info {
+    top: 250px; }
+
   .promo-content, .hero-content {
     max-width: 650px; }
 
@@ -456,6 +463,9 @@ ol, ul {
 @media (max-width: 768px) {
   .promo, .hero {
     height: 480px; }
+
+  .hero {
+    height: 400px; }
 
   .promo-content, .hero-content {
     max-width: 500px;
@@ -473,11 +483,11 @@ ol, ul {
 
   .promo-content, .hero-content {
     max-width: initial;
-    padding: 0 10px; }
+    padding: 0 20px; }
 
   .label {
-    top: 10px;
-    left: 10px; }
+    top: 20px;
+    left: 20px; }
 
   .left-align .promo-content-wrapper, .left-align .hero-content-wrapper {
     margin: 0 auto; }
@@ -494,7 +504,7 @@ ol, ul {
     background-position: center; }
   .split .promo-content, .split .hero-content {
     background-color: orange;
-    padding: 50px 10px 0px 10px; }
+    padding: 50px 20px 0px 20px; }
   .split .slant {
     fill: orange; }
   .split .button-wrapper {
@@ -503,7 +513,17 @@ ol, ul {
     bottom: 30px;
     left: 0px;
     right: 0px;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+
+  .bottom-slant {
+    visibility: hidden; }
+
+  #recipe-info {
+    position: relative;
+    top: initial;
+    right: intiial;
+    width: 100%;
+    padding: 10px 0px; } }
 /* Text Size Media Queries ----------------------------------*/
 @media (max-width: 1024px) {
   h1 {
