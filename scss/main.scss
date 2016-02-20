@@ -170,7 +170,7 @@ nav {
 	margin: 0;
 	padding-left: 0;
 	position: absolute;
-	left: $gutter;
+	left: $margin-left-lg;
 	top: 18px;
 	li {
 		display: inline-block;
@@ -190,10 +190,21 @@ nav {
 #logo {
 	position: absolute;
 	top: 16px;
-	right: $gutter;
+	right: $margin-left-lg;
 }
+@media(max-width: 768px) {
+	#nav-items {
+		left: $margin-left-md;
+		li {
+			margin-left: 20px;
+		}
+	}
+	#logo {
+		right: $margin-left-md;
+	}
 
-@media only screen and (max-width: 640px) {
+}
+@media(max-width: 568px) {
 nav {
 	box-shadow: none;
 	position: relative;

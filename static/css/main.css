@@ -124,7 +124,7 @@ nav {
   margin: 0;
   padding-left: 0;
   position: absolute;
-  left: 40px;
+  left: 80px;
   top: 18px; }
   #nav-items li {
     display: inline-block;
@@ -141,9 +141,17 @@ nav {
 #logo {
   position: absolute;
   top: 16px;
-  right: 40px; }
+  right: 80px; }
 
-@media only screen and (max-width: 640px) {
+@media (max-width: 768px) {
+  #nav-items {
+    left: 40px; }
+    #nav-items li {
+      margin-left: 20px; }
+
+  #logo {
+    right: 40px; } }
+@media (max-width: 568px) {
   nav {
     box-shadow: none;
     position: relative;
