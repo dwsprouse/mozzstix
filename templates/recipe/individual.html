@@ -2,7 +2,7 @@
 
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-<div class="content-wrapper">
+{# <div class="content-wrapper">
   <div class="l-content">
     <div class="pure-g">
       <div class="pure-u-1 pure-u-md-1-3">
@@ -10,15 +10,15 @@
       </div>
     </div>
   </div>
-</div>
+</div> #}
 <div class="hero left-align image gradient {{ item.theme }}" style="background-image:url({{ item.image.url }});">
-  <svg class="top-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
+{#   <svg class="top-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
       <polygon points="0,0 50,0 50,50"/>
-  </svg>
+  </svg> #}
   <div class="hero-content-wrapper">
     <div class="hero-content">
-{#       <h4 class="label">{{ item._type }}</h4>
-      <h1>{{ item.name }}</h1> #}
+      <h4 class="label">{{ item._type }}</h4>
+      <h1>{{ item.name }}</h1>
     </div>
   </div>
   <svg class="bottom-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
@@ -31,7 +31,7 @@
   </ul>
 </div>
 
-<div class="content-wrapper">
+<div class="content-wrapper margin-top-bottom">
   <div class="l-content">
 {#     <div class="pure-g">
       <div class="pure-u-1 pure-u-md-1-3">
@@ -44,12 +44,12 @@
     <div class="pure-g">
       <div class="pure-u-1 pure-u-md-1-3">
         <div class="l-box">
-          <h2 class="box-header">Ingredients</h2>
+          <h2 class="box-header margin-bottom-md">Ingredients</h2>
           <section id="ingredients">
             {% for key, row in item.ingredients %}
             <div class="row">
               <div class="cell no-wrap">
-                <p>{{ row|first }}</p>
+                <p><strong>{{ row|first }}</strong></p>
               </div>
               <div class="cell">
                 <p>{{ row|last }}</p>
@@ -61,17 +61,17 @@
       </div>
       <div class="pure-u-1 pure-u-md-2-3">
         <div class="l-box">
-          <h2 class="box-header">Directions</h2>
+          <h2 class="box-header margin-bottom-md">Directions</h2>
           <section id="directions">
             {% for row in item.directions %}
             <div class="row">
-              <div class="cell no-wrap">
+              <div class="cell step-num no-wrap">
                 <h1>{{ loop.index }}</h1>
               </div>
-              <div class="cell">
+              <div class="cell step">
                 <p>{{ row.step }}</p>
-                {% if row.image %}
-                <img src="{{ row.image }}" />
+                {% if row.step_image %}
+                <img class="scale-img" src="{{ row.step_image.url }}" />
                 {% endif %}
               </div>
             </div>
