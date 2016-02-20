@@ -7,7 +7,6 @@
   {% set editorial = editorial|sort('publish_date', true) %}
   {# INFINITE SCROLL BY 10 #}
   {% set editorial = paginate(editorial, 10) %}
-<div id="site-content">
     {% for item in editorial %}
       {# GALLERY #}
       {% if item._type == "recipe" %}
@@ -17,7 +16,6 @@
         {% include "templates/partials/li_review.html" %}
       {% endif %}
     {% endfor %}
-</div>
 {% endblock %}
 
 {% block scripts_extra %}{% endblock %}

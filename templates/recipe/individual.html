@@ -1,58 +1,85 @@
-{# ------------------------------------------------------- #}
-{# INDIVIDUAL VIEW FOR EACH recipe #}
-{# This page can use any data from http:localhost:2000/cms/#/form/recipe/ #}
-{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
-{# http://paularmstrong.github.io/swig/docs/tags/ #}
-{# Learn about calling data into Webhook pages here: #}
-{# http://www.webhook.com/docs/template-rules-and-filters/ #}
-{# ------------------------------------------------------- #}
-{# Confused what extends and blocks do? Watch a primer: #}
-{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
-{# This sets our page <title>. It will append this recipe's name to the site title defined in base.html #}
+
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-  <p><a href="{{ url('recipe') }}">View a list of all recipe</a></p>
-  <h1>{{ item.name }}</h1>
-  <ul>
-      <li>
-        <strong>Name: </strong>
-        {{ item.name }}
-      </li>
-      <li>
-        <strong>Create Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.create_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Last Updated: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.last_updated|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Publish Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.publish_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>: </strong>
-        {# You can pull out a lot more information from the image property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <img src="{{ item.image|imageSize(200, 200) }}" />
-      </li>
-      <li>
-        <strong>Split Image: </strong>
-        {# You can pull out a lot more information from the image property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <img src="{{ item.split_image|imageSize(200, 200) }}" />
-      </li>
-      <li>
-        <strong>Promo Text: </strong>
-        {{ item.promo_text }}
-      </li>
-      <li>
-        <strong>Promo CTA: </strong>
-        {{ item.promo_cta }}
-      </li>
+<div class="content-wrapper">
+  <div class="l-content">
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-3">
+        <h1>{{ item.name }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hero left-align image gradient {{ item.theme }}" style="background-image:url({{ item.image.url }});">
+  <svg class="top-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
+      <polygon points="0,0 50,0 50,50"/>
+  </svg>
+  <div class="hero-content-wrapper">
+    <div class="hero-content">
+{#       <h4 class="label">{{ item._type }}</h4>
+      <h1>{{ item.name }}</h1> #}
+    </div>
+  </div>
+  <svg class="bottom-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
+      <polygon points="0,0 50,50 0,50"/>
+  </svg>
+  <ul class="recipe-info">
+    <li><span>Total time</span>{{ item.total_time }}</li>
+    <li><span>Yield</span>{{ item.yield }}</li>
+    <li><span>Skill Level</span>{{ item.skill_level }}</li>
   </ul>
+</div>
+
+<div class="content-wrapper">
+  <div class="l-content">
+{#     <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-3">
+        <h1>{{ item.name }}</h1>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-3">
+        <img class="scale-img" src="{{ item.image.url }}" />
+      </div>
+    </div> #}
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div class="l-box">
+          <h2 class="box-header">Ingredients</h2>
+          <section id="ingredients">
+            {% for key, row in item.ingredients %}
+            <div class="row">
+              <div class="cell no-wrap">
+                <p>{{ row|first }}</p>
+              </div>
+              <div class="cell">
+                <p>{{ row|last }}</p>
+              </div>
+            </div>     
+            {% endfor %}
+          </section>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-3">
+        <div class="l-box">
+          <h2 class="box-header">Directions</h2>
+          <section id="directions">
+            {% for row in item.directions %}
+            <div class="row">
+              <div class="cell no-wrap">
+                <h1>{{ loop.index }}</h1>
+              </div>
+              <div class="cell">
+                <p>{{ row.step }}</p>
+                {% if row.image %}
+                <img src="{{ row.image }}" />
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
