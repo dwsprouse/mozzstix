@@ -73,6 +73,15 @@ body {
 .gradient .promo-content, .gradient .hero-content {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent); }
 
+.slant-promo-bottom {
+  position: absolute;
+  top: 640px;
+  z-index: 1; }
+
+.slant-promo-top {
+  position: absolute;
+  bottom: 640px; }
+
 /* Detail Pages ----------------------------------*/
 hr {
   border: 0;
@@ -233,9 +242,7 @@ h1, h2, h3, h4, p {
 
 h1 {
   font-size: 4em;
-  letter-spacing: -.5px;
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  letter-spacing: -.5px; }
 
 h1.quote {
   font-family: LEngineer;
@@ -448,6 +455,8 @@ li div {
     background-color: #cc3300; }
     .velveta.color-block .location {
       color: #fff; }
+  .velveta .slant-promo-bottom {
+    fill: orange; }
   .velveta .label {
     color: #ff6600; }
   .velveta .button {
@@ -476,6 +485,8 @@ li div {
     background-color: #660000; }
     .ketchup.color-block .location {
       color: #fff; }
+  .ketchup .slant-promo-bottom {
+    fill: #cc6666; }
   .ketchup .label {
     color: #cc0000; }
   .ketchup .button {
@@ -504,6 +515,8 @@ li div {
     background-color: #003300; }
     .lettuce.color-block .location {
       color: #fff; }
+  .lettuce .slant-promo-bottom {
+    fill: #669966; }
   .lettuce .label {
     color: #009933; }
   .lettuce .button {
@@ -532,6 +545,8 @@ li div {
     background-color: #cc3300; }
     .velveta-blk.color-block .location {
       color: #fff; }
+  .velveta-blk .slant-promo-bottom {
+    fill: orange; }
   .velveta-blk .label {
     color: #ff6600; }
   .velveta-blk .button {

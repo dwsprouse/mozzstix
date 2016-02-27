@@ -3,17 +3,20 @@
 {% block content %}
 
   {# MERGE A BUNCH OF CMS CONTENT TOGETHER INTO ONE FEED #}
-  {% set editorial = merge(cms.recipe, cms.review) %}
+  {% set editorial = merge(cms.recipe, cms.review, cms.video) %}
   {% set editorial = editorial|sort('publish_date', true) %}
   {# INFINITE SCROLL BY 10 #}
   {% set editorial = paginate(editorial, 10) %}
     {% for item in editorial %}
-      {# GALLERY #}
+      {# RECIPE #}
       {% if item._type == "recipe" %}
         {% include "templates/partials/li_recipe.html" %}
-      {# ARTICLE #}
+      {# REVIEW #}
       {% elseif item._type == "review" %}
         {% include "templates/partials/li_review.html" %}
+      {# VIDEO #}
+      {% elseif item._type == "video" %}
+        {% include "templates/partials/li_video.html" %}
       {% endif %}
     {% endfor %}
 {% endblock %}
