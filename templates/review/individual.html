@@ -1,66 +1,75 @@
-{# ------------------------------------------------------- #}
-{# INDIVIDUAL VIEW FOR EACH review #}
-{# This page can use any data from http:localhost:2000/cms/#/form/review/ #}
-{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
-{# http://paularmstrong.github.io/swig/docs/tags/ #}
-{# Learn about calling data into Webhook pages here: #}
-{# http://www.webhook.com/docs/template-rules-and-filters/ #}
-{# ------------------------------------------------------- #}
-{# Confused what extends and blocks do? Watch a primer: #}
-{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
-{# This sets our page <title>. It will append this review's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-  <p><a href="{{ url('review') }}">View a list of all review</a></p>
-  <h1>{{ item.name }}</h1>
-  <ul>
-      <li>
-        <strong>Name: </strong>
-        {{ item.name }}
-      </li>
-      <li>
-        <strong>Create Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.create_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Last Updated: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.last_updated|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Publish Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.publish_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Theme: </strong>
-        {{ item.theme }}
-      </li>
-      <li>
-        <strong>Neighborhood: </strong>
-        {{ item.neighborhood }}
-      </li>
-      <li>
-        <strong>Rating: </strong>
-        {{ item.rating }}
-      </li>
-      <li>
-        <strong>Promo Quotation: </strong>
-        {{ item.promo_quotation }}
-      </li>
-      <li>
-        <strong>Promo CTA: </strong>
-        {{ item.promo_cta }}
-      </li>
-      <li>
-        <strong>Preview URL: </strong>
-        {{ item.preview_url }}
-      </li>
-      <li>
-        <strong>Slug: </strong>
-        {{ item.slug }}
-      </li>
-  </ul>
+
+<div class="hero color-block solid {{ item.theme }}">
+  <div class="hero-content-wrapper">
+    <div class="hero-content">
+      <h4 class="label">{{ item._type }}</h4>
+      <p class="location">52 8th Ave<br>New York, NY 10014</p>
+      <h1>{{ item.name }} <span class="venue-location">{{ item.neighborhood }}</span></h1>
+      <div class="rating-wrapper">
+        <h1 class="rating-{{ item.rating}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
+      </div>
+    </div>
+  </div>
+  <svg class="bottom-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
+      <polygon points="0,0 50,50 0,50"/>
+  </svg>
+</div>
+<div class="content-wrapper margin-top-bottom">
+  <div class="pure-g">
+    <div class="pure-u-1 pure-u-md-2-5 pure-u-lg-1-3 margin-bottom">
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1 breakdown padding">
+          <h2 class="box-header">Rating</h2>
+          <div class="table">
+            <div class="row">
+              <p class="cell">Crispness</p>
+                      <div class="rating-wrapper">
+              <p class="cell rating-2">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+            </div>
+            </div>
+            <div class="row">
+              <p class="cell">Breading</p>
+              <p class="cell rating-2">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+            </div>
+            <div class="row">
+              <p class="cell">Gooeyness</p>
+              <p class="cell rating-4">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+            </div>
+            <div class="row">
+              <p class="cell">Cheese</p>
+              <p class="cell rating-5">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+            </div>
+            <div class="row">
+              <p class="cell">Dip</p>
+              <p class="cell rating-2">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+            </div>
+            <div class="row">
+              <p class="cell padding-bottom">Presentation</p>
+              <p class="cell rating-3">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+            </div>
+            <div class="row">
+              <p class="cell"><b>Overall</b></p>
+              <p class="cell rating-3">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-3-5 pure-u-lg-2-3 padding margin-bottom">
+      <h2 class="box-header">Full Review</h2>
+      <p><b>Name</b> Mozzarella Sticks</p>
+      <p><b>Price</b> $5.49 for 6</p>
+      <p><b>PPM</b> $0.92 per stick</p>
+      <br>
+      <p>I’ve always been a fan of Art Bar. Upon entering the back room it’s hard not to appreciate the intentionally mismatched living room decor, the oversized rendition of the Last Supper featuring Jim Morrison as Jesus or the awkward indeterminately aged couple who mistook their seats near the fireplace for their apartment after one too many and couldn’t keep their hands off one another in such a way that was so bizarre I’m uncomfortable even thinking about it—suffice it to say, Art Bar is a great date spot. The three of us sat near a different couple who seemed less offensive and ordered a round of beers and mozzarella sticks.</p>
+      <h1 class="quote margin-top-bottom">&ldquo;The cheese was nearly room temperature and congealed-you could barely stretch it.&rdquo;</h1>
+      <p> I was pleasantly surprised by how fast the sticks came out and equally impressed by the initial crunch—it was exactly what you’d expect from deep fried golden goodness. But alas, once my teeth cut through that crusty shell, I discovered the cheese was nearly room temperature and congealed—you could barely stretch the stuff.</p>
+      <img class="margin-top-bottom" src="images/parm-crusted-mozzstix.jpg"/>
+      <p>I was met with equivalent disappointment by the marinara sauce as it tasted like off-brand crushed tomatoes with a halfhearted dusting of ground pepper. I’d definitely go back to Art Bar, just not for the sticks.</p>
+    </div>
+  </div>
+</div>
 {% endblock %}

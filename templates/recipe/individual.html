@@ -52,19 +52,15 @@
         <div class="l-box">
           <h2 class="box-header margin-bottom-md">Directions</h2>
           <section id="directions">
+            <ol>
             {% for row in item.directions %}
-            <div class="row">
-              <div class="cell step-num no-wrap">
-                <h1>{{ loop.index }}</h1>
-              </div>
-              <div class="cell step">
-                <p>{{ row.step }}</p>
+              <li><div><p>{{ row.step }}</p>
                 {% if row.step_image %}
                 <img class="scale-img" src="{{ row.step_image.url }}" />
-                {% endif %}
-              </div>
-            </div>
+                {% endif %}</div>
+              </li>
             {% endfor %}
+            </ol>
           </section>
         </div>
       </div>

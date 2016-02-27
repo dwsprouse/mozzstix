@@ -7,7 +7,7 @@
 				<h1 class="rating-{{ item.rating}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
 			</div>
 			<h1 class="quote padding-bottom">&ldquo;{{ item.promo_quotation }}&rdquo;</h1>
-			<div class="button"><h2>{{ item.promo_cta }}</h2></div>
+			<div class="button"><a href="{{ url(item) }}"><h2>{{ item.promo_cta}}</h2></a></div>
 		</div>
 	</div>
 </div>
