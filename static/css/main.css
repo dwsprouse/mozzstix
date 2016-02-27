@@ -235,7 +235,7 @@ h1 {
   font-size: 4em;
   letter-spacing: -.5px;
   margin-top: 10px;
-  margin-bottom: 30px; }
+  margin-bottom: 10px; }
 
 h1.quote {
   font-family: LEngineer;
@@ -345,6 +345,7 @@ ol, ul {
 /* Button ----------------------------------*/
 .button {
   will-change: transform;
+  margin-top: 20px;
   position: relative;
   display: inline-block;
   text-align: center;
@@ -457,6 +458,11 @@ li div {
       border-top-color: #cc3300; }
   .velveta svg {
     fill: orange; }
+  @media (max-width: 568px) {
+    .velveta .split-top .promo-content, .velveta .split-top .hero-content {
+      background-color: orange; } }
+  .velveta .split-bottom .slant {
+    fill: orange; }
 
 .ketchup {
   background-color: #cc6666; }
@@ -479,6 +485,11 @@ li div {
     .ketchup .button:after {
       border-top-color: #660000; }
   .ketchup svg {
+    fill: #cc6666; }
+  @media (max-width: 568px) {
+    .ketchup .split-top .promo-content, .ketchup .split-top .hero-content {
+      background-color: #cc6666; } }
+  .ketchup .split-bottom .slant {
     fill: #cc6666; }
 
 .lettuce {
@@ -503,6 +514,11 @@ li div {
       border-top-color: #003300; }
   .lettuce svg {
     fill: #669966; }
+  @media (max-width: 568px) {
+    .lettuce .split-top .promo-content, .lettuce .split-top .hero-content {
+      background-color: #669966; } }
+  .lettuce .split-bottom .slant {
+    fill: #669966; }
 
 .velveta-blk {
   background-color: orange; }
@@ -525,6 +541,11 @@ li div {
     .velveta-blk .button:after {
       border-top-color: #cc3300; }
   .velveta-blk svg {
+    fill: orange; }
+  @media (max-width: 568px) {
+    .velveta-blk .split-top .promo-content, .velveta-blk .split-top .hero-content {
+      background-color: orange; } }
+  .velveta-blk .split-bottom .slant {
     fill: orange; }
 
 /* Page Format Media Queries ----------------------------------*/
@@ -629,7 +650,7 @@ li div {
     font-size: 4.5em; }
 
   h3 {
-    font-size: 1.38em; } }
+    font-size: 1.32em; } }
 @media (max-width: 568px) {
   h1 {
     font-size: 2.6em; }

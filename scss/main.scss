@@ -295,7 +295,7 @@ h1 {
 	font-size: $h1-xl;
 	letter-spacing: -.5px;
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 h1.quote {
 	font-family: LEngineer;
@@ -391,6 +391,7 @@ ol, ul {
 
 .button {
 	will-change: transform;
+	margin-top: 20px;
 	position: relative;
 	display: inline-block;
 	text-align: center;
@@ -566,6 +567,18 @@ line-height: 1.2;
 	svg {
 		fill: $color-bkgd;
 	}
+	@media(max-width: 568px) {
+		.split-top {
+			.promo-content {
+				background-color: $color-bkgd;
+			}
+		}
+	}
+	.split-bottom {
+		.slant {
+			fill: $color-bkgd;
+		}
+	}
 	background-color: $color-bkgd;
 }
 .velveta {@include theme-generator(#ff6600, #cc3300, orange, #fff);}
@@ -638,7 +651,6 @@ line-height: 1.2;
 			height: 100%;
 			background-size: cover;
 			background-position: center;
-			// background-image: url("../images/parm-crusted-mozzstix-mobile.jpg");
 		}
 		.promo-content {
 			background-color: orange;
@@ -680,7 +692,7 @@ line-height: 1.2;
 @media(max-width: 768px) {
 	h1 {font-size: $h1-md;}
 	h1.quote {font-size: $h1-md * 1.5;}
-	h3 {font-size: $h1-md * .46;}
+	h3 {font-size: $h1-md * .44;}
 }
 @media(max-width: 568px) {
 	h1 {font-size: $h1-sm;}

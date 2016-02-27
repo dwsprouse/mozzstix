@@ -7,7 +7,8 @@
     <div class="hero-content">
       <h4 class="label">{{ item._type }}</h4>
       <p class="location">52 8th Ave<br>New York, NY 10014</p>
-      <h1>{{ item.name }} <span class="venue-location">{{ item.neighborhood }}</span></h1>
+      <h1>{{ item.name }}</h1>
+      <h1 class="venue-location">{{ item.neighborhood }}</h1>
       <div class="rating-wrapper">
         <h1 class="rating-{{ item.rating}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
       </div>
@@ -25,34 +26,74 @@
           <h2 class="box-header">Rating</h2>
           <div class="table">
             <div class="row">
-              <p class="cell">Crispness</p>
-                      <div class="rating-wrapper">
-              <p class="cell rating-2">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
-            </div>
-            </div>
-            <div class="row">
-              <p class="cell">Breading</p>
-              <p class="cell rating-2">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
-            </div>
-            <div class="row">
-              <p class="cell">Gooeyness</p>
-              <p class="cell rating-4">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+              <div class="cell">
+                <p>Crispness</p>
+              </div>
+              <div class="cell">
+                <div class="rating-wrapper">
+                  <p class="rating-{{ item.crispness }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                </div>
+              </div>
             </div>
             <div class="row">
-              <p class="cell">Cheese</p>
-              <p class="cell rating-5">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+              <div class="cell">
+                <p>Breading</p>
+              </div>
+              <div class="cell">
+                <div class="rating-wrapper">
+                  <p class="rating-{{ item.breading }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                </div>
+              </div>
+            </div>
+           <div class="row">
+              <div class="cell">
+                <p>Gooeyness</p>
+              </div>
+              <div class="cell">
+                <div class="rating-wrapper">
+                  <p class="rating-{{ item.gooeyness }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                </div>
+              </div>
             </div>
             <div class="row">
-              <p class="cell">Dip</p>
-              <p class="cell rating-2">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+              <div class="cell">
+                <p>Cheese</p>
+              </div>
+              <div class="cell">
+                <div class="rating-wrapper">
+                  <p class="rating-{{ item.cheese }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                </div>
+              </div>
+            </div>
+           <div class="row">
+              <div class="cell">
+                <p>Dip</p>
+              </div>
+              <div class="cell">
+                <div class="rating-wrapper">
+                  <p class="rating-{{ item.dip }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                </div>
+              </div>
             </div>
             <div class="row">
-              <p class="cell padding-bottom">Presentation</p>
-              <p class="cell rating-3">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+              <div class="cell">
+                <p>Presentation</p>
+              </div>
+              <div class="cell">
+                <div class="rating-wrapper">
+                  <p class="rating-{{ item.presentation }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                </div>
+              </div>
             </div>
-            <div class="row">
-              <p class="cell"><b>Overall</b></p>
-              <p class="cell rating-3">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+           <div class="row">
+              <div class="cell">
+                <p><b>Overall</b></p>
+              </div>
+              <div class="cell">
+                <div class="rating-wrapper">
+                  <p class="rating-{{ item.rating }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -60,15 +101,11 @@
     </div>
     <div class="pure-u-1 pure-u-md-3-5 pure-u-lg-2-3 padding margin-bottom">
       <h2 class="box-header">Full Review</h2>
-      <p><b>Name</b> Mozzarella Sticks</p>
-      <p><b>Price</b> $5.49 for 6</p>
-      <p><b>PPM</b> $0.92 per stick</p>
+      <p><b>Name</b> {{ item.name_of_dish }}</p>
+      <p><b>Price</b> {{ item.price }}</p>
+      <p><b>PPM</b> {{ item.price_per_stick }}</p>
       <br>
-      <p>I’ve always been a fan of Art Bar. Upon entering the back room it’s hard not to appreciate the intentionally mismatched living room decor, the oversized rendition of the Last Supper featuring Jim Morrison as Jesus or the awkward indeterminately aged couple who mistook their seats near the fireplace for their apartment after one too many and couldn’t keep their hands off one another in such a way that was so bizarre I’m uncomfortable even thinking about it—suffice it to say, Art Bar is a great date spot. The three of us sat near a different couple who seemed less offensive and ordered a round of beers and mozzarella sticks.</p>
-      <h1 class="quote margin-top-bottom">&ldquo;The cheese was nearly room temperature and congealed-you could barely stretch it.&rdquo;</h1>
-      <p> I was pleasantly surprised by how fast the sticks came out and equally impressed by the initial crunch—it was exactly what you’d expect from deep fried golden goodness. But alas, once my teeth cut through that crusty shell, I discovered the cheese was nearly room temperature and congealed—you could barely stretch the stuff.</p>
-      <img class="margin-top-bottom" src="images/parm-crusted-mozzstix.jpg"/>
-      <p>I was met with equivalent disappointment by the marinara sauce as it tasted like off-brand crushed tomatoes with a halfhearted dusting of ground pepper. I’d definitely go back to Art Bar, just not for the sticks.</p>
+      {{ item.review|safe }}
     </div>
   </div>
 </div>
