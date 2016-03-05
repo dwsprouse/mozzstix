@@ -1,18 +1,18 @@
 <div class="promo left-align image gradient split {{ item.theme }}" style="background-image:url({{ item.promo_image.url }});">
 	<div class="promo-content-wrapper">
-		<div class="split-top">
+		<div class="promo-top">
 			<div class="promo-content">
-				<h4 class="label">{{ item._type }}</h4>
-				<h3>{{ item.promo_text}}</h3>
-				<h1>{{ item.name }}</h1>
+				<div class="label">{{ item._type }}</div>
+				<div class="promo-text">{{ item.promo_text}}</div>
+				<h1 class="promo-headline">{{ item.name }}</h1>
 				<div class="button-wrapper">
-					<div class="button"><a href="{{ url(item) }}"><h2>{{ item.promo_cta}}</h2></a></div>
+					<div class="button"><a href="{{ url(item) }}"><div class="button-text">{{ item.promo_cta|default('Read Recipe') }}</div></a></div>
 				</div>
 			</div>
 		</div>
-		<div class="split-bottom" style="background-image:url({{ item.split_image.url }});">
+		<div class="promo-bottom" style="background-image:url({{ item.split_image.url }});">
 			<svg width="100%" height="40" viewBox="0 0 50 50" preserveAspectRatio="none">
-				<polygon class="slant" points="0,0 50,0 50,50"/>
+				<polygon points="0,0 50,0 50,50"/>
 			</svg>
 		</div>
 	</div>

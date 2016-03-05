@@ -4,13 +4,15 @@
 	</svg> -->
 	<div class="promo-content-wrapper">
 		<div class="promo-content">
-			<h4 class="label">{{ item._type }}</h4>
-			<h3>{{ item.name }} <span class="venue-location">{{ item.neighborhood }}</span><h3>
+			<div class="label">{{ item._type }}</div>
+			<div class="promo-text">{{ item.name }} <span class="venue-location">{{ item.neighborhood }}</span></div>
 			<div class="rating-wrapper">
 				<h1 class="rating-{{ item.rating}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
 			</div>
-			<h1 class="quote padding-bottom">&ldquo;{{ item.promo_quotation }}&rdquo;</h1>
-			<div class="button"><a href="{{ url(item) }}"><h2>{{ item.promo_cta}}</h2></a></div>
+			<h1 class="quote promo-headline">&ldquo;{{ item.promo_quotation }}&rdquo;</h1>
+			<div class="button-wrapper">
+				<div class="button"><a href="{{ url(item) }}"><div class="button-text">{{ item.promo_cta|default('Read Review') }}</div></a></div>
+			</div>
 		</div>
 	</div>
 <!-- 	<svg class="slant-promo-bottom" width="100%" height="25" viewBox="0 0 50 50" preserveAspectRatio="none">

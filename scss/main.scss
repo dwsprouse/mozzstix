@@ -52,7 +52,14 @@ body {
 .label {
 	position: absolute;
 	top: 50px;
+	border-left: solid;
+	border-width: 6px;
+	padding-left: 8px;
+	text-align: left;
 	left: $margin-left-lg;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 800;
 }
 .promo {
 	width: 100%;
@@ -71,6 +78,20 @@ body {
 	text-align: center;
 	max-width: 800px;
 }
+.promo-text {
+	margin-bottom: 15px;
+}
+.promo-text, .button-text {
+	font-size: 24px;
+	font-weight: 800;
+	color: #fff
+}
+.promo-headline {
+	margin-bottom: 25px;
+}
+.button-text {
+	text-transform: uppercase;
+}
 .hero {
 	@extend .promo;
 	height: 450px;
@@ -81,16 +102,19 @@ body {
 .hero-content {
 	@extend .promo-content;
 }
-.split-top {
+.promo-top {
 	display: table-row;
 }
-.split-bottom {
+.promo-bottom {
 	display: none;
+}
+.image .left-align {
+	background-size: cover;
+	background-position: right;
 }
 .image {
 	background-size: cover;
-	background-position: right;
-	// background-image: url("../images/parm-crusted-mozzstix.jpg");
+	background-position: center;
 }
 .solid {
 	background: orange;
@@ -287,12 +311,6 @@ nav {
 
 /* Text Format ----------------------------------*/
 
-.label {
-	border-left: solid;
-	border-width: 6px;
-	padding-left: 8px;
-	text-align: left;
-}
 h1, h2, h3, h4, p {
 	margin: 0;
 	padding: 0;
@@ -300,19 +318,15 @@ h1, h2, h3, h4, p {
     line-height: 1em;
 }
 h1 {
-	font-size: $h1-xl;
+	font-size: 72px;
 	letter-spacing: -.5px;
-	// margin-top: 10px;
-	// margin-bottom: 10px;
 }
 h1.quote {
 	font-family: LEngineer;
 	font-weight: normal;
-	font-size: $h1-xl * 1.5;
+	font-size: 96px;
 	text-transform: uppercase;
 	letter-spacing: -2px;
-	margin-top: 0px;
-	margin-bottom: 20px;
 }
 h1.light {
 	font-weight: 300;
@@ -327,14 +341,6 @@ h1.star-rating {
 h2 {
 	font-size: $h1-md * .46;
 	text-transform: uppercase;
-}
-h3 {
-	font-size: $h1-xl * .38;
-}
-h4 {
-	font-size: $h1-md * .35;
-	text-transform: uppercase;
-	color: $dark-orange;
 }
 p {
 	font-weight: 300;
@@ -357,13 +363,13 @@ ol, ul {
 	text-transform: uppercase;
 }
 .venue-location {
-	font-weight: 300;
+	font-weight: 500;
 }
+
 
 /* Rating ----------------------------------*/
 
 .rating {
-	color: rgba(0,0,0, .2);
 	&:after {
 		left: 0;
 		content: "\2605 \2605 \2605 \2605 \2605";
@@ -399,7 +405,6 @@ ol, ul {
 
 .button {
 	will-change: transform;
-	margin-top: 20px;
 	position: relative;
 	display: inline-block;
 	text-align: center;
@@ -440,6 +445,9 @@ ol, ul {
 .button:hover:before, .button:hover:after {
 	border-left-width: 0;
 	border-top-width: 0;
+}
+.play-button {
+	padding: 20px 24px;
 }
 
 
@@ -547,9 +555,9 @@ line-height: 1.2;
 @mixin theme-generator ($color-primary, $color-secondary, $color-bkgd, $color-text) {
 	h1, h2, h3, h4 {
 		color: $color-text;
-		.star-rating {
-			color: rgba(0,0,0, .2);
-		}
+	}
+	.star-rating {
+		color: rgba(0,0,0, .2);
 	}
 	&.solid {
 		background: $color-bkgd;
@@ -564,7 +572,7 @@ line-height: 1.2;
 		fill: $color-bkgd;
 	}
 	.label {
-		color: $color-primary;
+		color: $color-secondary;
 	}
 	.button {
 		background-color: $color-primary;
@@ -579,15 +587,10 @@ line-height: 1.2;
 		fill: $color-bkgd;
 	}
 	@media(max-width: 568px) {
-		.split-top {
+		.promo-top {
 			.promo-content {
 				background-color: $color-bkgd;
 			}
-		}
-	}
-	.split-bottom {
-		.slant {
-			fill: $color-bkgd;
 		}
 	}
 	background-color: $color-bkgd;
@@ -657,18 +660,15 @@ line-height: 1.2;
 		.promo-content {background:rgba(0,0,0,.6);}
 	}
 	.split {
-		.split-bottom{
+		.promo-bottom{
 			display: table-row;
-			height: 100%;
+			height: 55%;
 			background-size: cover;
 			background-position: center;
 		}
 		.promo-content {
 			background-color: orange;
-			padding: 50px $margin-left-sm 0px $margin-left-sm;
-		}
-		.slant {
-			fill: orange;
+			padding: 50px $margin-left-sm 20px $margin-left-sm;
 		}
 		.button-wrapper {
 			display: relative;
@@ -696,19 +696,18 @@ line-height: 1.2;
 /* Text Size Media Queries ----------------------------------*/
 
 @media(max-width: 1024px) {
-	h1 {font-size: $h1-lg;}
-	h1.quote {font-size: $h1-lg * 1.5;}
-	h3 {font-size: $h1-lg * .46;}
+	h1 {font-size: 64px;}
+	h1.quote {font-size: 72px;}
 }
 @media(max-width: 768px) {
-	h1 {font-size: $h1-md;}
-	h1.quote {font-size: $h1-md * 1.5;}
-	h3 {font-size: $h1-md * .44;}
+	h1 {font-size: 48px;}
+	h1.quote {font-size: 64px;}
+	.promo-text, .button-text {font-size: 22px;}
 }
 @media(max-width: 568px) {
-	h1 {font-size: $h1-sm;}
-	h1.quote {font-size: $h1-sm * 1.5;}
+	h1 {font-size: 36px;}
+	h1.quote {font-size: 48px;}
 	h2, p {font-size: $h1-sm * .46;}
-	// h3 {font-size: $h1-sm * .38;}
-	h4 {font-size: $h1-sm * .35;}
+	.button-text {font-size: 18px;}
+	// .promo-text {font-size: 22}
 }

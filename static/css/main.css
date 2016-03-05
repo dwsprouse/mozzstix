@@ -23,7 +23,14 @@ body {
 .label {
   position: absolute;
   top: 50px;
-  left: 80px; }
+  border-left: solid;
+  border-width: 6px;
+  padding-left: 8px;
+  text-align: left;
+  left: 80px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 800; }
 
 .promo, .hero {
   width: 100%;
@@ -42,18 +49,36 @@ body {
   text-align: center;
   max-width: 800px; }
 
+.promo-text {
+  margin-bottom: 15px; }
+
+.promo-text, .button-text {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff; }
+
+.promo-headline {
+  margin-bottom: 25px; }
+
+.button-text {
+  text-transform: uppercase; }
+
 .hero {
   height: 450px; }
 
-.split-top {
+.promo-top {
   display: table-row; }
 
-.split-bottom {
+.promo-bottom {
   display: none; }
+
+.image .left-align {
+  background-size: cover;
+  background-position: right; }
 
 .image {
   background-size: cover;
-  background-position: right; }
+  background-position: center; }
 
 .solid {
   background: orange; }
@@ -228,12 +253,6 @@ nav {
   #site-content {
     top: 46px; } }
 /* Text Format ----------------------------------*/
-.label {
-  border-left: solid;
-  border-width: 6px;
-  padding-left: 8px;
-  text-align: left; }
-
 h1, h2, h3, h4, p {
   margin: 0;
   padding: 0;
@@ -241,17 +260,15 @@ h1, h2, h3, h4, p {
   line-height: 1em; }
 
 h1 {
-  font-size: 4em;
+  font-size: 72px;
   letter-spacing: -.5px; }
 
 h1.quote {
   font-family: LEngineer;
   font-weight: normal;
-  font-size: 6em;
+  font-size: 96px;
   text-transform: uppercase;
-  letter-spacing: -2px;
-  margin-top: 0px;
-  margin-bottom: 20px; }
+  letter-spacing: -2px; }
 
 h1.light {
   font-weight: 300; }
@@ -266,14 +283,6 @@ h1.star-rating {
 h2 {
   font-size: 1.38em;
   text-transform: uppercase; }
-
-h3 {
-  font-size: 1.52em; }
-
-h4 {
-  font-size: 1.05em;
-  text-transform: uppercase;
-  color: #cc3300; }
 
 p {
   font-weight: 300;
@@ -296,16 +305,14 @@ ol, ul {
   text-transform: uppercase; }
 
 .venue-location {
-  font-weight: 300; }
+  font-weight: 500; }
 
 /* Rating ----------------------------------*/
-.rating, .rating-1, .rating-2, .rating-3, .rating-4, .rating-5, .rating-1-5, .rating-2-5, .rating-3-5, .rating-4-5 {
-  color: rgba(0, 0, 0, 0.2); }
-  .rating:after, .rating-1:after, .rating-2:after, .rating-3:after, .rating-4:after, .rating-5:after, .rating-1-5:after, .rating-2-5:after, .rating-3-5:after, .rating-4-5:after {
-    left: 0;
-    content: "\2605 \2605 \2605 \2605 \2605";
-    position: absolute;
-    overflow: hidden; }
+.rating:after, .rating-1:after, .rating-2:after, .rating-3:after, .rating-4:after, .rating-5:after, .rating-1-5:after, .rating-2-5:after, .rating-3-5:after, .rating-4-5:after {
+  left: 0;
+  content: "\2605 \2605 \2605 \2605 \2605";
+  position: absolute;
+  overflow: hidden; }
 
 .rating-wrapper {
   position: relative;
@@ -352,7 +359,6 @@ ol, ul {
 /* Button ----------------------------------*/
 .button {
   will-change: transform;
-  margin-top: 20px;
   position: relative;
   display: inline-block;
   text-align: center;
@@ -393,6 +399,9 @@ ol, ul {
 .button:hover:before, .button:hover:after {
   border-left-width: 0;
   border-top-width: 0; }
+
+.play-button {
+  padding: 20px 24px; }
 
 /* Recipe Detail Page ----------------------------------*/
 .bottom-slant {
@@ -447,8 +456,8 @@ li div {
   background-color: orange; }
   .velveta h1, .velveta h2, .velveta h3, .velveta h4 {
     color: #fff; }
-    .velveta h1 .star-rating, .velveta h2 .star-rating, .velveta h3 .star-rating, .velveta h4 .star-rating {
-      color: rgba(0, 0, 0, 0.2); }
+  .velveta .star-rating {
+    color: rgba(0, 0, 0, 0.2); }
   .velveta.solid {
     background: orange; }
   .velveta.color-block {
@@ -458,7 +467,7 @@ li div {
   .velveta .slant-promo-bottom {
     fill: orange; }
   .velveta .label {
-    color: #ff6600; }
+    color: #cc3300; }
   .velveta .button {
     background-color: #ff6600; }
     .velveta .button:before {
@@ -468,17 +477,15 @@ li div {
   .velveta svg {
     fill: orange; }
   @media (max-width: 568px) {
-    .velveta .split-top .promo-content, .velveta .split-top .hero-content {
+    .velveta .promo-top .promo-content, .velveta .promo-top .hero-content {
       background-color: orange; } }
-  .velveta .split-bottom .slant {
-    fill: orange; }
 
 .ketchup {
   background-color: #cc6666; }
   .ketchup h1, .ketchup h2, .ketchup h3, .ketchup h4 {
     color: #fff; }
-    .ketchup h1 .star-rating, .ketchup h2 .star-rating, .ketchup h3 .star-rating, .ketchup h4 .star-rating {
-      color: rgba(0, 0, 0, 0.2); }
+  .ketchup .star-rating {
+    color: rgba(0, 0, 0, 0.2); }
   .ketchup.solid {
     background: #cc6666; }
   .ketchup.color-block {
@@ -488,7 +495,7 @@ li div {
   .ketchup .slant-promo-bottom {
     fill: #cc6666; }
   .ketchup .label {
-    color: #cc0000; }
+    color: #660000; }
   .ketchup .button {
     background-color: #cc0000; }
     .ketchup .button:before {
@@ -498,17 +505,15 @@ li div {
   .ketchup svg {
     fill: #cc6666; }
   @media (max-width: 568px) {
-    .ketchup .split-top .promo-content, .ketchup .split-top .hero-content {
+    .ketchup .promo-top .promo-content, .ketchup .promo-top .hero-content {
       background-color: #cc6666; } }
-  .ketchup .split-bottom .slant {
-    fill: #cc6666; }
 
 .lettuce {
   background-color: #669966; }
   .lettuce h1, .lettuce h2, .lettuce h3, .lettuce h4 {
     color: #fff; }
-    .lettuce h1 .star-rating, .lettuce h2 .star-rating, .lettuce h3 .star-rating, .lettuce h4 .star-rating {
-      color: rgba(0, 0, 0, 0.2); }
+  .lettuce .star-rating {
+    color: rgba(0, 0, 0, 0.2); }
   .lettuce.solid {
     background: #669966; }
   .lettuce.color-block {
@@ -518,7 +523,7 @@ li div {
   .lettuce .slant-promo-bottom {
     fill: #669966; }
   .lettuce .label {
-    color: #009933; }
+    color: #003300; }
   .lettuce .button {
     background-color: #009933; }
     .lettuce .button:before {
@@ -528,17 +533,15 @@ li div {
   .lettuce svg {
     fill: #669966; }
   @media (max-width: 568px) {
-    .lettuce .split-top .promo-content, .lettuce .split-top .hero-content {
+    .lettuce .promo-top .promo-content, .lettuce .promo-top .hero-content {
       background-color: #669966; } }
-  .lettuce .split-bottom .slant {
-    fill: #669966; }
 
 .velveta-blk {
   background-color: orange; }
   .velveta-blk h1, .velveta-blk h2, .velveta-blk h3, .velveta-blk h4 {
     color: #000; }
-    .velveta-blk h1 .star-rating, .velveta-blk h2 .star-rating, .velveta-blk h3 .star-rating, .velveta-blk h4 .star-rating {
-      color: rgba(0, 0, 0, 0.2); }
+  .velveta-blk .star-rating {
+    color: rgba(0, 0, 0, 0.2); }
   .velveta-blk.solid {
     background: orange; }
   .velveta-blk.color-block {
@@ -548,7 +551,7 @@ li div {
   .velveta-blk .slant-promo-bottom {
     fill: orange; }
   .velveta-blk .label {
-    color: #ff6600; }
+    color: #cc3300; }
   .velveta-blk .button {
     background-color: #ff6600; }
     .velveta-blk .button:before {
@@ -558,10 +561,8 @@ li div {
   .velveta-blk svg {
     fill: orange; }
   @media (max-width: 568px) {
-    .velveta-blk .split-top .promo-content, .velveta-blk .split-top .hero-content {
+    .velveta-blk .promo-top .promo-content, .velveta-blk .promo-top .hero-content {
       background-color: orange; } }
-  .velveta-blk .split-bottom .slant {
-    fill: orange; }
 
 /* Page Format Media Queries ----------------------------------*/
 @media (max-width: 1024px) {
@@ -620,16 +621,14 @@ li div {
   .gradient .promo-content, .gradient .hero-content {
     background: rgba(0, 0, 0, 0.6); }
 
-  .split .split-bottom {
+  .split .promo-bottom {
     display: table-row;
-    height: 100%;
+    height: 55%;
     background-size: cover;
     background-position: center; }
   .split .promo-content, .split .hero-content {
     background-color: orange;
-    padding: 50px 20px 0px 20px; }
-  .split .slant {
-    fill: orange; }
+    padding: 50px 20px 20px 20px; }
   .split .button-wrapper {
     display: relative;
     position: absolute;
@@ -650,31 +649,28 @@ li div {
 /* Text Size Media Queries ----------------------------------*/
 @media (max-width: 1024px) {
   h1 {
-    font-size: 3.4em; }
+    font-size: 64px; }
 
   h1.quote {
-    font-size: 5.1em; }
-
-  h3 {
-    font-size: 1.564em; } }
+    font-size: 72px; } }
 @media (max-width: 768px) {
   h1 {
-    font-size: 3em; }
+    font-size: 48px; }
 
   h1.quote {
-    font-size: 4.5em; }
+    font-size: 64px; }
 
-  h3 {
-    font-size: 1.32em; } }
+  .promo-text, .button-text {
+    font-size: 22px; } }
 @media (max-width: 568px) {
   h1 {
-    font-size: 2.6em; }
+    font-size: 36px; }
 
   h1.quote {
-    font-size: 3.9em; }
+    font-size: 48px; }
 
   h2, p {
     font-size: 1.196em; }
 
-  h4 {
-    font-size: 0.91em; } }
+  .button-text {
+    font-size: 18px; } }
