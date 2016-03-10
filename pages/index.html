@@ -6,7 +6,7 @@
   {% set editorial = merge(cms.recipe, cms.review, cms.video) %}
   {% set editorial = editorial|sort('publish_date', true) %}
   {# INFINITE SCROLL BY 10 #}
-  {% set editorial = paginate(editorial, 2) %}
+  {% set editorial = paginate(editorial, 10) %}
     {% for item in editorial %}
       {# RECIPE #}
       {% if item._type == "recipe" %}
