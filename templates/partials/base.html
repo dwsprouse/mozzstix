@@ -63,6 +63,9 @@
     </div>
 
       {% block footer %}
+        {% include "templates/partials/paginator.html" %}
+      {% endblock %}
+      {% block footer %}
         {% include "templates/partials/footer.html" %}
       {% endblock %}
 
