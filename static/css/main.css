@@ -157,6 +157,9 @@ hr {
 .margin-bottom-sm {
   margin-bottom: 15px; }
 
+.margin-top-sm {
+  margin-top: 15px; }
+
 .padding {
   padding: 0 1em; }
 
@@ -288,7 +291,7 @@ h1.star-rating {
   margin-bottom: 20px; }
 
 h2 {
-  font-size: 1.38em;
+  font-size: 36px;
   text-transform: uppercase; }
 
 p {
@@ -296,7 +299,8 @@ p {
   font-size: 18px;
   line-height: 30px;
   color: #732700;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  text-align: left; }
 
 a {
   text-decoration: none;
@@ -459,19 +463,26 @@ li div {
 
 /* Review Detail Page ----------------------------------*/
 /* About Page ----------------------------------*/
-.about-welcome {
-  font-size: 36px;
-  text-transform: uppercase;
-  font-weight: 300;
-  color: #cc0000; }
+.uppercase {
+  text-transform: uppercase; }
 
-.about-melty {
+.light {
+  font-weight: 300;
+  letter-spacing: 1.5px; }
+
+.extra-jumbo {
   font-size: 175px;
   text-transform: uppercase; }
 
-.about-goodness {
+.jumbo {
   font-size: 104px;
   text-transform: uppercase; }
+
+.cycle div {
+  display: inline-block; }
+
+.cycle-text {
+  text-align: left; }
 
 /* Themes ----------------------------------*/
 .white {
@@ -724,6 +735,9 @@ li div {
     right: intiial;
     width: 100%;
     padding: 10px 0px; } }
+.flex-height {
+  height: initial; }
+
 /* Text Size Media Queries ----------------------------------*/
 @media (max-width: 1024px) {
   h1 {

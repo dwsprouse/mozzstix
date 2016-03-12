@@ -202,6 +202,9 @@ hr {
 .margin-bottom-sm {
 	margin-bottom: 15px;
 }
+.margin-top-sm {
+	margin-top: 15px;
+}
 .padding {
 	padding: 0 1em;
 }
@@ -349,7 +352,7 @@ h1.star-rating {
 	margin-bottom: 20px;
 }
 h2 {
-	font-size: $h1-md * .46;
+	font-size: 36px;
 	text-transform: uppercase;
 }
 p {
@@ -358,6 +361,7 @@ p {
 	line-height: 30px;
 	color: $cream;
 	letter-spacing: 1px;
+	text-align: left;
 }
 a {
 	text-decoration: none;
@@ -560,19 +564,28 @@ line-height: 1.2;
 // 	}
 // }
 /* About Page ----------------------------------*/
-.about-welcome {
-	font-size: 36px;
+.uppercase {
 	text-transform: uppercase;
-	font-weight: 300;
-	color: #cc0000;
 }
-.about-melty {
+.light {
+	font-weight: 300;
+	letter-spacing: 1.5px;
+}
+.extra-jumbo {
 	font-size: 175px;
 	text-transform: uppercase;
 }
-.about-goodness {
+.jumbo {
 	font-size: 104px;
 	text-transform: uppercase;
+}
+.cycle {
+	div {
+		display: inline-block;
+	}
+}
+.cycle-text {
+	text-align: left;
 }
 
 
@@ -719,7 +732,9 @@ line-height: 1.2;
 		padding: 10px 0px;
 	}
 }
-
+.flex-height {
+	height: initial;
+}
 
 /* Text Size Media Queries ----------------------------------*/
 
