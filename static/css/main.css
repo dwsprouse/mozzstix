@@ -105,6 +105,9 @@ body {
 .gradient .promo-content, .gradient .hero-content {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent); }
 
+.gradient-white .promo-content, .gradient-white .hero-content {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); }
+
 .slant-promo-bottom {
   position: absolute;
   top: 640px;
@@ -484,6 +487,12 @@ li div {
 .cycle-text {
   text-align: left; }
 
+.bio-image {
+  max-width: 250px; }
+
+.mozzstix-logo {
+  max-width: 600px; }
+
 /* Themes ----------------------------------*/
 .white {
   background-color: #fff; }
@@ -691,6 +700,9 @@ li div {
     left: 40px;
     top: 20px; } }
 @media (max-width: 568px) {
+  .l-box {
+    padding: 20px 0px; }
+
   .promo-content-wrapper, .hero-content-wrapper {
     width: 100%; }
 
@@ -709,6 +721,9 @@ li div {
 
   .gradient .promo-content, .gradient .hero-content {
     background: rgba(0, 0, 0, 0.6); }
+
+  .gradient-white .promo-content, .gradient-white .hero-content {
+    background: rgba(255, 255, 255, 0.6); }
 
   .split .promo-bottom {
     display: table-row;
@@ -744,7 +759,13 @@ li div {
     font-size: 64px; }
 
   h1.quote {
-    font-size: 72px; } }
+    font-size: 72px; }
+
+  .extra-jumbo {
+    font-size: 175px; }
+
+  .jumbo {
+    font-size: 104px; } }
 @media (max-width: 768px) {
   h1 {
     font-size: 48px; }
@@ -752,8 +773,17 @@ li div {
   h1.quote {
     font-size: 64px; }
 
+  h2 {
+    font-size: 28px; }
+
   .promo-text, .button-text {
-    font-size: 22px; } }
+    font-size: 22px; }
+
+  .extra-jumbo {
+    font-size: 146px; }
+
+  .jumbo {
+    font-size: 86px; } }
 @media (max-width: 568px) {
   h1 {
     font-size: 36px; }
@@ -761,8 +791,17 @@ li div {
   h1.quote {
     font-size: 48px; }
 
-  h2, p {
+  h2 {
+    font-size: 24px; }
+
+  p {
     font-size: 1.196em; }
 
   .button-text {
-    font-size: 18px; } }
+    font-size: 18px; }
+
+  .extra-jumbo {
+    font-size: 80px; }
+
+  .jumbo {
+    font-size: 48px; } }

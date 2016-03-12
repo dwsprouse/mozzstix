@@ -147,6 +147,9 @@ body {
 .gradient {
 	.promo-content {background: linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,0));}
 }
+.gradient-white {
+	.promo-content {background: linear-gradient(to right, rgba(255,255,255,.6), rgba(255,255,255,0));}
+}
 .slant-promo-bottom {
 	position: absolute;
 	top: 640px;
@@ -586,6 +589,13 @@ line-height: 1.2;
 }
 .cycle-text {
 	text-align: left;
+	// white-space: nowrap;
+}
+.bio-image {
+	max-width: 250px;
+}
+.mozzstix-logo {
+	max-width: 600px;
 }
 
 
@@ -680,6 +690,9 @@ line-height: 1.2;
 	}
 }
 @media(max-width: 568px) {
+	.l-box {
+		padding: 20px 0px;
+	}	
 	.promo-content-wrapper {
 		width: 100%;
 	}
@@ -699,6 +712,9 @@ line-height: 1.2;
 	//On phone, gradient turns into a dim
 	.gradient {
 		.promo-content {background:rgba(0,0,0,.6);}
+	}
+	.gradient-white {
+		.promo-content {background:rgba(255,255,255,.6);}
 	}
 	.split {
 		.promo-bottom{
@@ -741,16 +757,24 @@ line-height: 1.2;
 @media(max-width: 1024px) {
 	h1 {font-size: 64px;}
 	h1.quote {font-size: 72px;}
+	.extra-jumbo {font-size: 175px;}
+	.jumbo {font-size: 104px;}
 }
 @media(max-width: 768px) {
 	h1 {font-size: 48px;}
 	h1.quote {font-size: 64px;}
+	h2 {font-size: 28px}
 	.promo-text, .button-text {font-size: 22px;}
+	.extra-jumbo {font-size: 146px;}
+	.jumbo {font-size: 86px;}
 }
 @media(max-width: 568px) {
 	h1 {font-size: 36px;}
 	h1.quote {font-size: 48px;}
-	h2, p {font-size: $h1-sm * .46;}
+	h2 {font-size: 24px}
+	p {font-size: $h1-sm * .46;}
 	.button-text {font-size: 18px;}
+	.extra-jumbo {font-size: 80px;}
+	.jumbo {font-size: 48px;}
 	// .promo-text {font-size: 22}
 }
