@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=$('div[id^="option-"]').hide(),d=0;!function n(){e.eq(d).fadeIn(400).delay(1e3).fadeOut(400,n),d=++d%e.length}()});

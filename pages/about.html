@@ -1,0 +1,70 @@
+{% extends "templates/partials/base.html" %}
+
+{% block title %}{% parent %} - {{ cms.about.name }}{% endblock %}
+{% block content %}
+<div class="promo solid velveta">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <div class="about-welcome">Welcome to the world of</div>
+      <h1 class="about-melty">Melty</h1>
+      <h1 class="about-goodness">Goodness</h1>
+    </div>
+  </div>
+</div>
+<div class="promo solid mustard">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <img width="686" height="532" src="{{ cms.about.logo.url }}"></img>
+    </div>
+  </div>
+</div>
+<div class="promo right-align image white" style="background-image:url({{ cms.about.segue_background.url }});">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <h1>Intrigued?</h1>
+    </div>
+  </div>
+</div>
+<div class="promo solid velveta">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <h1>Mozzstix.com is 
+        <div id="option-1">Recipes</div>
+        <div id="option-2">Reviews</div>
+        <div id="option-3">Cheesy</div>
+        <div id="option-4">Videos</div>
+        <div id="option-5">Melty</div>
+      </h1>
+    </div>
+  </div>
+</div>
+<div class="promo left-align image" style="background-image:url({{ cms.about.recipes_background.url }});">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <h1>Recipe</h1>
+    </div>
+  </div>
+</div>
+<div class="promo left-align image" style="background-image:url({{ cms.about.review_background.url }});">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <h1>Review</h1>
+    </div>
+  </div>
+</div>
+<div class="promo left-align image" style="background-image:url({{ cms.about.video_background.url }});">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <h1>Video</h1>
+    </div>
+  </div>
+</div>
+<div class="promo solid">
+  <div class="promo-content-wrapper">
+    <div class="promo-content">
+      <div class="promo-text">In case you haven't noticed. We strech over backwards</div>
+      <h1>For mozzarella sticks</h1>
+    </div>
+  </div>
+</div>
+{% endblock %}

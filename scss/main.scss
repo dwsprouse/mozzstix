@@ -125,9 +125,19 @@ body {
 	}
 }
 .left-align {
-	.promo-content-wrapper {margin: 0;}
+	.promo-content-wrapper {margin: 0;	}
 	.promo-content {
 		text-align: left;
+		max-width: 480px;
+	}
+}
+.right-align {
+	.promo-content-wrapper {
+		margin: 0;
+		float: right;
+	}
+	.promo-content {
+		text-align: right;
 		max-width: 480px;
 	}
 }
@@ -549,6 +559,22 @@ line-height: 1.2;
 // 		}
 // 	}
 // }
+/* About Page ----------------------------------*/
+.about-welcome {
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: 300;
+	color: #cc0000;
+}
+.about-melty {
+	font-size: 175px;
+	text-transform: uppercase;
+}
+.about-goodness {
+	font-size: 104px;
+	text-transform: uppercase;
+}
+
 
 /* Themes ----------------------------------*/
 
@@ -595,7 +621,9 @@ line-height: 1.2;
 	}
 	background-color: $color-bkgd;
 }
+.white {@include theme-generator(#cccccc, #666666, #fff, #000);}
 .velveta {@include theme-generator(#ff6600, #cc3300, orange, #fff);}
+.mustard {@include theme-generator(#ffff00, #cccc00, #ffd200, #fff);}
 .ketchup {@include theme-generator(#cc0000, #660000, #cc6666, #fff);}
 .lettuce {@include theme-generator(#009933, #003300, #669966, #fff);}
 .velveta-blk {@include theme-generator(#ff6600, #cc3300, orange, #000);}
