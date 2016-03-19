@@ -6,7 +6,8 @@
   <div class="hero-content-wrapper">
     <div class="hero-content">
       <h4 class="label">{{ item._type }}</h4>
-      <h1>{{ item.name }}</h1>
+      <h1 class="margin-bottom-sm">{{ item.name }}</h1>
+      <p class="subheadline">{{ item.subheadline }}</p>
     </div>
   </div>
   <svg class="bottom-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
@@ -38,7 +39,7 @@
             {% for key, row in item.ingredients %}
             <div class="row">
               <div class="cell no-wrap">
-                <p><strong>{{ row|first }}</strong></p>
+                <p class="measurement">{{ row|first }}</p>
               </div>
               <div class="cell">
                 <p>{{ row|last }}</p>
@@ -48,7 +49,9 @@
           </section>
         </div>
       </div>
-      <div class="pure-u-1 pure-u-md-2-3">
+      <div class="pure-u-1 pure-u-md-1-12">
+      </div>
+      <div class="pure-u-1 pure-u-md-7-12">
         <div class="l-box">
           <h2 class="box-header margin-bottom-md">Directions</h2>
           <section id="directions">
@@ -56,7 +59,7 @@
             {% for row in item.directions %}
               <li><div><p>{{ row.step }}</p>
                 {% if row.step_image %}
-                <img class="scale-img" src="{{ row.step_image.url }}" />
+                <img class="margin-top-sm scale-img" src="{{ row.step_image.url }}" />
                 {% endif %}</div>
               </li>
             {% endfor %}

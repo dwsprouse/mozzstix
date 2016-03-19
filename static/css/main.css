@@ -64,7 +64,7 @@ body {
   text-transform: uppercase; }
 
 .hero {
-  height: 450px; }
+  height: 500px; }
 
 .promo-top {
   display: table-row; }
@@ -298,12 +298,17 @@ h2 {
   text-transform: uppercase; }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
-  line-height: 30px;
-  color: #732700;
-  letter-spacing: 1px;
+  line-height: 34px;
+  color: #502800;
+  letter-spacing: .5px;
   text-align: left; }
+
+p.subheadline {
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0px; }
 
 a {
   text-decoration: none;
@@ -420,7 +425,7 @@ ol, ul {
 /* Recipe Detail Page ----------------------------------*/
 .bottom-slant {
   position: absolute;
-  top: 400px; }
+  top: 450px; }
 
 .top-slant {
   position: absolute;
@@ -428,6 +433,17 @@ ol, ul {
 
 #ingredients, #directions, #recipe-info {
   display: table; }
+
+#ingredients p {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 600; }
+
+.measurement {
+  color: #fff;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  text-align: right; }
 
 #recipe-info {
   position: absolute;
@@ -449,7 +465,7 @@ ol, ul {
   font-weight: 400;
   line-height: 1.2;
   clear: left;
-  padding-bottom: 20px; }
+  margin-bottom: 40px; }
 
 li div {
   overflow: hidden;
@@ -457,8 +473,8 @@ li div {
 
 #directions li:before {
   content: counter(step-counter);
-  margin: -8px 20px 0 0;
-  font-size: 4em;
+  margin: -12px 20px 0 0;
+  font-size: 72px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   color: white;
@@ -668,11 +684,11 @@ li div {
     height: 560px; }
 
   .hero {
-    height: 400px; }
+    height: 450px; }
 
   .bottom-slant {
     position: absolute;
-    top: 350px; }
+    top: 400px; }
 
   #recipe-info {
     top: 250px; }
