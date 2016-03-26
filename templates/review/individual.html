@@ -6,17 +6,14 @@
   <div class="hero-content-wrapper">
     <div class="hero-content">
       <h4 class="label">{{ item._type }}</h4>
-      <p class="location">52 8th Ave<br>New York, NY 10014</p>
+      <p class="location">{{ item.address }}<br>{{ item.city }}, {{ item.state }} {{ item.zip_code }}</p>
       <h1>{{ item.name }}</h1>
       <h1 class="venue-location">{{ item.neighborhood }}</h1>
       <div class="rating-wrapper">
-        <h1 class="rating-{{ item.rating}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
+        <h1 class="rating-{{ item.overall}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
       </div>
     </div>
   </div>
-  <svg class="bottom-slant" width="100%" height="50" viewBox="0 0 50 50" preserveAspectRatio="none">
-      <polygon points="0,0 50,50 0,50"/>
-  </svg>
 </div>
 <div class="content-wrapper margin-top-bottom">
   <div class="pure-g">
@@ -91,7 +88,7 @@
               </div>
               <div class="cell">
                 <div class="rating-wrapper">
-                  <p class="rating-{{ item.rating }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+                  <p class="rating-{{ item.overall }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
                 </div>
               </div>
             </div>
@@ -102,10 +99,21 @@
     <div class="pure-u-1 pure-u-md-3-5 pure-u-lg-2-3 padding margin-bottom">
       <h2 class="box-header">Full Review</h2>
       <p><b>Name</b> {{ item.name_of_dish }}</p>
+      {% if item.description_of_dish %}
+      <p><b>Description</b> {{ item.description_of_dish }}</p>
+      {% endif %}
       <p><b>Price</b> {{ item.price }}</p>
       <p><b>PPM</b> {{ item.price_per_stick }}</p>
       <br>
-      {{ item.review|safe }}
+      {% for row in item.review %}
+      <p>{{ row.paragraph }}</p><br>
+        {% if row.quotation %}
+        <h2 class="quote">&ldquo;{{ row.quotation }}&rdquo;</h1><br>
+        {% endif %}
+        {% if row.image %}
+        <img class="scale-img" src="{{ row.image.url }}" /><br>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>

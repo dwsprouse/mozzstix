@@ -196,6 +196,10 @@ hr {
 	height: auto; 
     width: 100%; 
 }
+.small-img {
+	height: auto; 
+    width: 350px; 
+}
 .margin-top-bottom {
 	margin: 50px auto;
 }
@@ -337,12 +341,15 @@ h1 {
 	font-size: 72px;
 	letter-spacing: -.5px;
 }
-h1.quote {
+.quote {
 	font-family: LEngineer;
 	font-weight: normal;
-	font-size: 96px;
 	text-transform: uppercase;
 	letter-spacing: -2px;
+}
+h1.quote {
+
+	font-size: 96px;
 }
 h1.light {
 	font-weight: 300;
@@ -593,6 +600,7 @@ line-height: 1.2;
 .extra-jumbo {
 	font-size: 175px;
 	text-transform: uppercase;
+	line-height: 120px;
 }
 .jumbo {
 	font-size: 104px;
@@ -618,7 +626,7 @@ line-height: 1.2;
 /* Themes ----------------------------------*/
 
 @mixin theme-generator ($color-primary, $color-secondary, $color-bkgd, $color-text) {
-	h1, h2, h3, h4 {
+	h1, h2, h3, h4, .promo-text {
 		color: $color-text;
 	}
 	.star-rating {
@@ -661,11 +669,12 @@ line-height: 1.2;
 	background-color: $color-bkgd;
 }
 .white {@include theme-generator(#cccccc, #666666, #fff, #000);}
-.velveta {@include theme-generator(#ff6600, #cc3300, orange, #fff);}
+.velveta {@include theme-generator(#ff6600, #cc3300, #ffa500, #fff);}
+.logo {@include theme-generator(#ff6600, #cc3300, #e79500, #fff);}
 .mustard {@include theme-generator(#ffff00, #cccc00, #ffd200, #fff);}
 .ketchup {@include theme-generator(#cc0000, #660000, #cc6666, #fff);}
 .lettuce {@include theme-generator(#009933, #003300, #669966, #fff);}
-.velveta-blk {@include theme-generator(#ff6600, #cc3300, orange, #000);}
+.velveta-blk {@include theme-generator(#ff6600, #cc3300, #ffa500, #000);}
 
 /* Page Format Media Queries ----------------------------------*/
 

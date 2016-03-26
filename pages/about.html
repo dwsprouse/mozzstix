@@ -2,29 +2,31 @@
 
 {% block title %}{% parent %} - {{ cms.about.name }}{% endblock %}
 {% block content %}
-<div class="promo solid velveta">
+<div class="promo solid">
   <div class="promo-content-wrapper">
     <div class="promo-content">
-      <h2 class="light">Welcome to</h2>
-      <h1 class="extra-jumbo">Melty</h1>
-      <h1 class="jumbo">Goodness</h1>
+      {# <h2 class="light">Meet the team</h2> #}
+      <h1 class="jumbo">We <3 Mozzstix</h1>
     </div>
   </div>
 </div>
-<div class="promo solid white">
+<div class="promo flex-height solid mustard">
   <div class="promo-content-wrapper">
     <div class="promo-content">
-      <img class="mozzstix-logo scale-img" src="{{ cms.about.logo.url }}"></img>
+      <div class="pure-g margin-top-bottom">
+        {% for row in cms.about.bios %}
+          <div class="pure-u-1 pure-u-md-1-3">
+            <div class="l-box">
+              <h2 class="box-header margin-bottom-md">{{ row.name }}</h2>
+              <img class="scale-img bio-image margin-bottom-sm" src="{{ row.image.url }}"></img>
+              <p>{{ row.bio }}</P>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
-{# <div class="promo right-align image white" style="background-image:url({{ cms.about.segue_background.url }});">
-  <div class="promo-content-wrapper">
-    <div class="promo-content">
-      <h1>Intrigued?</h1>
-    </div>
-  </div>
-</div> #}
 <div class="promo solid velveta">
   <div class="promo-content-wrapper">
     <div class="promo-content cycle">
@@ -64,28 +66,10 @@
     </div>
   </div>
 </div>
-<div class="promo flex-height solid mustard">
+<div class="promo solid logo">
   <div class="promo-content-wrapper">
     <div class="promo-content">
-      <div class="pure-g margin-top-bottom">
-        {% for row in cms.about.bios %}
-          <div class="pure-u-1 pure-u-md-1-3">
-            <div class="l-box">
-              <h2 class="box-header margin-bottom-md">{{ row.name }}</h2>
-              <img class="scale-img bio-image margin-bottom-sm" src="{{ row.image.url }}"></img>
-              <p>{{ row.bio }}</P>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
-<div class="promo solid">
-  <div class="promo-content-wrapper">
-    <div class="promo-content">
-      <h2 class="light">In case you haven't noticed</h2>
-      <h1 class="jumbo">We <3 Mozzstix</h1>
+      <img class="mozzstix-logo scale-img" src="{{ cms.about.logo.url }}"></img>
     </div>
   </div>
 </div>

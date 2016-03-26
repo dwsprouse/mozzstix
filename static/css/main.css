@@ -151,6 +151,10 @@ hr {
   height: auto;
   width: 100%; }
 
+.small-img {
+  height: auto;
+  width: 350px; }
+
 .margin-top-bottom {
   margin: 50px auto; }
 
@@ -276,12 +280,14 @@ h1 {
   font-size: 72px;
   letter-spacing: -.5px; }
 
-h1.quote {
+.quote {
   font-family: LEngineer;
   font-weight: normal;
-  font-size: 96px;
   text-transform: uppercase;
   letter-spacing: -2px; }
+
+h1.quote {
+  font-size: 96px; }
 
 h1.light {
   font-weight: 300; }
@@ -491,7 +497,8 @@ li div {
 
 .extra-jumbo {
   font-size: 175px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 120px; }
 
 .jumbo {
   font-size: 104px;
@@ -512,7 +519,7 @@ li div {
 /* Themes ----------------------------------*/
 .white {
   background-color: #fff; }
-  .white h1, .white h2, .white h3, .white h4 {
+  .white h1, .white h2, .white h3, .white h4, .white .promo-text {
     color: #000; }
   .white .star-rating {
     color: rgba(0, 0, 0, 0.2); }
@@ -539,19 +546,19 @@ li div {
       background-color: #fff; } }
 
 .velveta {
-  background-color: orange; }
-  .velveta h1, .velveta h2, .velveta h3, .velveta h4 {
+  background-color: #ffa500; }
+  .velveta h1, .velveta h2, .velveta h3, .velveta h4, .velveta .promo-text {
     color: #fff; }
   .velveta .star-rating {
     color: rgba(0, 0, 0, 0.2); }
   .velveta.solid {
-    background: orange; }
+    background: #ffa500; }
   .velveta.color-block {
     background-color: #cc3300; }
     .velveta.color-block .location {
       color: #fff; }
   .velveta .slant-promo-bottom {
-    fill: orange; }
+    fill: #ffa500; }
   .velveta .label {
     color: #cc3300; }
   .velveta .button {
@@ -561,14 +568,42 @@ li div {
     .velveta .button:after {
       border-top-color: #cc3300; }
   .velveta svg {
-    fill: orange; }
+    fill: #ffa500; }
   @media (max-width: 568px) {
     .velveta .promo-top .promo-content, .velveta .promo-top .hero-content {
-      background-color: orange; } }
+      background-color: #ffa500; } }
+
+.logo {
+  background-color: #e79500; }
+  .logo h1, .logo h2, .logo h3, .logo h4, .logo .promo-text {
+    color: #fff; }
+  .logo .star-rating {
+    color: rgba(0, 0, 0, 0.2); }
+  .logo.solid {
+    background: #e79500; }
+  .logo.color-block {
+    background-color: #cc3300; }
+    .logo.color-block .location {
+      color: #fff; }
+  .logo .slant-promo-bottom {
+    fill: #e79500; }
+  .logo .label {
+    color: #cc3300; }
+  .logo .button {
+    background-color: #ff6600; }
+    .logo .button:before {
+      border-left-color: #cc3300; }
+    .logo .button:after {
+      border-top-color: #cc3300; }
+  .logo svg {
+    fill: #e79500; }
+  @media (max-width: 568px) {
+    .logo .promo-top .promo-content, .logo .promo-top .hero-content {
+      background-color: #e79500; } }
 
 .mustard {
   background-color: #ffd200; }
-  .mustard h1, .mustard h2, .mustard h3, .mustard h4 {
+  .mustard h1, .mustard h2, .mustard h3, .mustard h4, .mustard .promo-text {
     color: #fff; }
   .mustard .star-rating {
     color: rgba(0, 0, 0, 0.2); }
@@ -596,7 +631,7 @@ li div {
 
 .ketchup {
   background-color: #cc6666; }
-  .ketchup h1, .ketchup h2, .ketchup h3, .ketchup h4 {
+  .ketchup h1, .ketchup h2, .ketchup h3, .ketchup h4, .ketchup .promo-text {
     color: #fff; }
   .ketchup .star-rating {
     color: rgba(0, 0, 0, 0.2); }
@@ -624,7 +659,7 @@ li div {
 
 .lettuce {
   background-color: #669966; }
-  .lettuce h1, .lettuce h2, .lettuce h3, .lettuce h4 {
+  .lettuce h1, .lettuce h2, .lettuce h3, .lettuce h4, .lettuce .promo-text {
     color: #fff; }
   .lettuce .star-rating {
     color: rgba(0, 0, 0, 0.2); }
@@ -651,19 +686,19 @@ li div {
       background-color: #669966; } }
 
 .velveta-blk {
-  background-color: orange; }
-  .velveta-blk h1, .velveta-blk h2, .velveta-blk h3, .velveta-blk h4 {
+  background-color: #ffa500; }
+  .velveta-blk h1, .velveta-blk h2, .velveta-blk h3, .velveta-blk h4, .velveta-blk .promo-text {
     color: #000; }
   .velveta-blk .star-rating {
     color: rgba(0, 0, 0, 0.2); }
   .velveta-blk.solid {
-    background: orange; }
+    background: #ffa500; }
   .velveta-blk.color-block {
     background-color: #cc3300; }
     .velveta-blk.color-block .location {
       color: #fff; }
   .velveta-blk .slant-promo-bottom {
-    fill: orange; }
+    fill: #ffa500; }
   .velveta-blk .label {
     color: #cc3300; }
   .velveta-blk .button {
@@ -673,10 +708,10 @@ li div {
     .velveta-blk .button:after {
       border-top-color: #cc3300; }
   .velveta-blk svg {
-    fill: orange; }
+    fill: #ffa500; }
   @media (max-width: 568px) {
     .velveta-blk .promo-top .promo-content, .velveta-blk .promo-top .hero-content {
-      background-color: orange; } }
+      background-color: #ffa500; } }
 
 /* Page Format Media Queries ----------------------------------*/
 @media (max-width: 1024px) {

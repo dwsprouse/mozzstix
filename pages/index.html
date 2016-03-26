@@ -1,7 +1,18 @@
 {% extends "templates/partials/base.html" %}
 
 {% block content %}
-
+  <div class="promo solid logo">
+    <div class="promo-content-wrapper">
+      <div class="promo-content">
+        {# <div class="label">Mozzstix</div> #}
+        {# <div class="promo-text">Welcome to Mozzstix.com</div> #}
+{#         <h1 class="extra-jumbo margin-bottom-sm">Melty</h1>
+        <h1 class="jumbo margin-bottom-sm">Goodness</h1> #}
+        <img class="mozzstix-logo scale-img margin-bottom-sm" src="{{ cms.about.logo.url }}"></img>
+        <div class="promo-text">Welcome to Melty Goodness</div> 
+      </div>
+    </div>
+  </div>
   {# MERGE A BUNCH OF CMS CONTENT TOGETHER INTO ONE FEED #}
   {% set editorial = merge(cms.recipe, cms.review, cms.video) %}
   {% set editorial = editorial|sort('publish_date', true) %}
