@@ -149,7 +149,8 @@ body {
 
 @media (max-width: 768px) {
   .single-column, .outset-column {
-    margin: 0px 40px 40px 340px; }
+    margin: 0px 40px 40px 340px;
+    max-width: initial; }
 
   .sidebar {
     margin: 0px 40px 40px 40px; } }
@@ -494,18 +495,18 @@ ol, ul {
   font-size: 2.4em;
   text-transform: capitalize; }
 
-#directions li {
+.directions li {
   counter-increment: step-counter;
   font-weight: 400;
   line-height: 1.2;
   clear: left;
   margin-bottom: 40px; }
 
-li div {
+.directions li div {
   overflow: hidden;
   line-height: 1.2; }
 
-#directions li:before {
+.directions li:before {
   content: counter(step-counter);
   margin: -12px 20px 0 0;
   font-size: 72px;
