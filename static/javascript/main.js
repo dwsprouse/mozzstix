@@ -7,4 +7,15 @@ $(document).ready(function() {
 	              .fadeOut(400, cycle);
 	    i = ++i % divs.length;
 	})();
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 450) {
+      $('.sidebar').addClass('locked-at-top');
+    }
+    if ($(window).scrollTop() < 451) {
+      $('.sidebar').removeClass('locked-at-top');
+    }
+  });
+
+
  });
