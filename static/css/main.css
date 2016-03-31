@@ -32,17 +32,17 @@ body {
   font-size: 16px;
   font-weight: 800; }
 
-.promo, .hero {
+.promo {
   width: 100%;
   height: 640px;
   position: relative; }
 
-.promo-content-wrapper, .hero-content-wrapper {
+.promo-content-wrapper {
   display: table;
   margin: 0 auto;
   height: 100%; }
 
-.promo-content, .hero-content {
+.promo-content {
   display: table-cell;
   padding: 0 80px;
   vertical-align: middle;
@@ -62,9 +62,6 @@ body {
 
 .button-text {
   text-transform: uppercase; }
-
-.hero {
-  height: 450px; }
 
 .promo-top {
   display: table-row; }
@@ -86,26 +83,26 @@ body {
 .dim .overlay {
   background: rgba(0, 0, 0, 0.3); }
 
-.left-align .promo-content-wrapper, .left-align .hero-content-wrapper {
+.left-align .promo-content-wrapper {
   margin: 0; }
-.left-align .promo-content, .left-align .hero-content {
+.left-align .promo-content {
   text-align: left;
   max-width: 480px; }
 
-.right-align .promo-content-wrapper, .right-align .hero-content-wrapper {
+.right-align .promo-content-wrapper {
   margin: 0;
   float: right; }
-.right-align .promo-content, .right-align .hero-content {
+.right-align .promo-content {
   text-align: right;
   max-width: 480px; }
 
 .center-align {
   text-align: center; }
 
-.gradient .promo-content, .gradient .hero-content {
+.gradient .promo-content {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent); }
 
-.gradient-white .promo-content, .gradient-white .hero-content {
+.gradient-white .promo-content {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); }
 
 .slant-promo-bottom {
@@ -118,6 +115,41 @@ body {
   bottom: 640px; }
 
 /* Detail Pages ----------------------------------*/
+.hero {
+  width: 100%;
+  height: 450px;
+  position: relative; }
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: right;
+  z-index: -1; }
+
+.hero-content-wrapper {
+  display: table;
+  height: 100%;
+  margin: 0 auto; }
+
+.hero-content {
+  display: table-cell;
+  padding: 80px;
+  vertical-align: middle;
+  text-align: center;
+  max-width: 800px; }
+  .hero-content p {
+    color: #fff;
+    font-weight: 600; }
+
+.left-align-gradient .hero-content-wrapper {
+  margin: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent); }
+.left-align-gradient .hero-content {
+  text-align: left;
+  max-width: 480px; }
+
 .section-wrapper {
   display: table;
   margin: 40px auto; }
@@ -130,6 +162,8 @@ body {
   margin-left: 80px;
   width: 280px;
   position: absolute; }
+  .sidebar p {
+    margin-bottom: 15px; }
 
 .locked-at-top {
   position: fixed;
@@ -148,6 +182,9 @@ body {
   padding-bottom: 10px; }
 
 @media (max-width: 768px) {
+  .hero-content {
+    padding: 40px; }
+
   .single-column, .outset-column {
     margin: 0px 40px 40px 340px;
     max-width: initial; }
@@ -166,8 +203,30 @@ body {
     top: initial; }
 
   .sidebar {
-    position: initial;
-    margin: 0px 40px 40px 40px; } }
+    position: initial; } }
+@media (max-width: 568px) {
+  .hero {
+    height: auto; }
+
+  .hero-img {
+    height: 200px;
+    position: relative; }
+
+  .left-align-gradient .hero-content-wrapper {
+    background: initial; }
+
+  .hero-content {
+    padding: 20px; }
+
+  .label-container {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); }
+
+  .sidebar, .single-column {
+    margin: 0px 20px 40px 20px; } }
 .details {
   margin-bottom: 0px; }
 
@@ -301,7 +360,7 @@ nav {
   #site-content {
     top: 46px; } }
 /* Text Format ----------------------------------*/
-h1, h2, h3, h4 {
+h1, h2 {
   margin: 0;
   padding: 0;
   font-weight: 800;
@@ -458,14 +517,6 @@ ol, ul {
   padding: 20px 24px; }
 
 /* Recipe Detail Page ----------------------------------*/
-.bottom-slant {
-  position: absolute;
-  top: 450px; }
-
-.top-slant {
-  position: absolute;
-  top: 0px; }
-
 #ingredients, #directions, #recipe-info {
   display: table; }
 
@@ -491,9 +542,8 @@ ol, ul {
     #recipe-info .cell p {
       line-height: 26px; }
 
-.box-header {
-  font-size: 2.4em;
-  text-transform: capitalize; }
+.step-num h1 {
+  line-height: 38px; }
 
 .directions li {
   counter-increment: step-counter;
@@ -570,7 +620,7 @@ ol, ul {
   .white svg {
     fill: #fff; }
   @media (max-width: 568px) {
-    .white .promo-top .promo-content, .white .promo-top .hero-content {
+    .white .promo-top .promo-content {
       background-color: #fff; } }
 
 .velveta {
@@ -598,7 +648,7 @@ ol, ul {
   .velveta svg {
     fill: #ffa500; }
   @media (max-width: 568px) {
-    .velveta .promo-top .promo-content, .velveta .promo-top .hero-content {
+    .velveta .promo-top .promo-content {
       background-color: #ffa500; } }
 
 .logo {
@@ -626,7 +676,7 @@ ol, ul {
   .logo svg {
     fill: #e79500; }
   @media (max-width: 568px) {
-    .logo .promo-top .promo-content, .logo .promo-top .hero-content {
+    .logo .promo-top .promo-content {
       background-color: #e79500; } }
 
 .mustard {
@@ -654,7 +704,7 @@ ol, ul {
   .mustard svg {
     fill: #ffd200; }
   @media (max-width: 568px) {
-    .mustard .promo-top .promo-content, .mustard .promo-top .hero-content {
+    .mustard .promo-top .promo-content {
       background-color: #ffd200; } }
 
 .ketchup {
@@ -682,7 +732,7 @@ ol, ul {
   .ketchup svg {
     fill: #cc6666; }
   @media (max-width: 568px) {
-    .ketchup .promo-top .promo-content, .ketchup .promo-top .hero-content {
+    .ketchup .promo-top .promo-content {
       background-color: #cc6666; } }
 
 .lettuce {
@@ -710,7 +760,7 @@ ol, ul {
   .lettuce svg {
     fill: #669966; }
   @media (max-width: 568px) {
-    .lettuce .promo-top .promo-content, .lettuce .promo-top .hero-content {
+    .lettuce .promo-top .promo-content {
       background-color: #669966; } }
 
 .velveta-blk {
@@ -738,16 +788,13 @@ ol, ul {
   .velveta-blk svg {
     fill: #ffa500; }
   @media (max-width: 568px) {
-    .velveta-blk .promo-top .promo-content, .velveta-blk .promo-top .hero-content {
+    .velveta-blk .promo-top .promo-content {
       background-color: #ffa500; } }
 
 /* Page Format Media Queries ----------------------------------*/
 @media (max-width: 1024px) {
-  .promo, .hero {
+  .promo {
     height: 560px; }
-
-  .hero {
-    height: 450px; }
 
   .bottom-slant {
     position: absolute;
@@ -756,52 +803,46 @@ ol, ul {
   #recipe-info {
     top: 250px; }
 
-  .promo-content, .hero-content {
+  .promo-content {
     max-width: 650px; }
 
-  .left-align .promo-content, .left-align .hero-content {
+  .left-align .promo-content {
     max-width: 420px; } }
 @media (max-width: 768px) {
-  .promo, .hero {
+  .promo {
     height: 480px; }
 
-  .hero {
-    height: 450px; }
-
-  .promo-content, .hero-content {
+  .promo-content {
     max-width: 500px;
     padding: 20px 40px; }
 
-  .left-align .promo-content, .left-align .hero-content {
+  .left-align .promo-content {
     max-width: 360px; }
 
   .label {
     left: 40px;
     top: 20px; } }
 @media (max-width: 568px) {
-  .promo-content-wrapper, .hero-content-wrapper {
+  .promo-content-wrapper {
     width: 100%; }
 
-  .promo-content, .hero-content {
+  .promo-content {
     max-width: initial;
     padding: 0 20px; }
-
-  .hero {
-    height: 450px; }
 
   .label {
     top: 20px;
     left: 20px; }
 
-  .left-align .promo-content-wrapper, .left-align .hero-content-wrapper {
+  .left-align .promo-content-wrapper {
     margin: 0 auto; }
-  .left-align .promo-content, .left-align .hero-content {
+  .left-align .promo-content {
     text-align: center; }
 
-  .gradient .promo-content, .gradient .hero-content {
+  .gradient .promo-content {
     background: rgba(0, 0, 0, 0.6); }
 
-  .gradient-white .promo-content, .gradient-white .hero-content {
+  .gradient-white .promo-content {
     background: rgba(255, 255, 255, 0.6); }
 
   .split .promo-bottom {
@@ -809,7 +850,7 @@ ol, ul {
     height: 55%;
     background-size: cover;
     background-position: center; }
-  .split .promo-content, .split .hero-content {
+  .split .promo-content {
     background-color: orange;
     padding: 50px 20px 20px 20px; }
   .split .button-wrapper {
@@ -819,9 +860,6 @@ ol, ul {
     left: 0px;
     right: 0px;
     margin: 0 auto; }
-
-  .bottom-slant {
-    visibility: hidden; }
 
   #recipe-info {
     position: relative;

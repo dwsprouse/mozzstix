@@ -2,16 +2,21 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
 
-<div class="hero left-align image gradient {{ item.theme }}" style="background-image:url({{ item.hero_image.url }});">
+<div class="hero left-align-gradient">
+  <div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
+  <div class="label-container">
+    <div class="label">{{ item._type }}</div>
+  </div>
   <div class="hero-content-wrapper">
     <div class="hero-content">
-      <h4 class="label">{{ item._type }}</h4>
-      <h1 class="margin-bottom-sm">{{ item.name }}</h1>
-      <p class="subheadline">{{ item.subheadline }}</p>
+      <h1>{{ item.name }}</h1>
+      <p>{{ item.subheadline }}</p>
     </div>
   </div>
 </div>
-<div id="recipe-info">
+
+
+{# <div id="recipe-info">
   <div class="row">
     <div class="cell no-wrap"><p><strong>Total time</strong></p></div>
     <div class="cell"><p>{{ item.total_time }}</p></div>
@@ -24,10 +29,10 @@
     <div class="cell no-wrap"><p><strong>Skill Level</strong></p></div>
     <div class="cell"><p>{{ item.skill_level }}</p></div>
   </div>
-</div>
+</div> #}
 
 <div class="section-wrapper">
-  <div class="sidebar">
+{#   <div class="sidebar">
     <h2>Ingredients</h2>
     {% for key, row in item.ingredients %}
     <div class="row">
@@ -38,6 +43,13 @@
         <p>{{ row|last }}</p>
       </div>
     </div>     
+    {% endfor %}
+  </div> #}
+
+   <div class="sidebar">
+    <h2>Ingredients</h2>
+    {% for key, row in item.ingredients %}
+    <p><span class="measurement">{{ row|first }}</span> {{ row|last }}</p>  
     {% endfor %}
   </div>
   <div class="single-column">
