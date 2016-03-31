@@ -2,7 +2,7 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
 
-<div class="hero dim image {{ item.theme }}" style="background-image:url({{ item.hero_image.url }});">
+{# <div class="hero dim image {{ item.theme }}" style="background-image:url({{ item.hero_image.url }});">
   <div class="overlay">
     <div class="hero-content-wrapper">
       <div class="hero-content">
@@ -16,7 +16,26 @@
       </div>
     </div>
   </div>
+</div> #}
+<div class="hero">
+    <div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
+  <div class="label-container">
+    <div class="label">{{ item._type }}</div>
+  </div>
+  <div class="overlay">
+    <div class="hero-content-wrapper">
+      <div class="hero-content">
+        <h1>{{ item.name }}</h1>
+        <h2 class="neighborhood">{{item.neighborhood}}</h2>
+        <div class="rating-wrapper">
+          <h1 class="rating-{{ item.overall}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
+        </div>
+        <div class="location">{{ item.address }}<br>{{ item.city }}, {{ item.state }} {{ item.zip_code }}</div>
+      </div>
+    </div>
+  </div>
 </div>
+<hr>
 <div class="section-wrapper">
   <div class="sidebar">
     <h2>Ratings</h2>
