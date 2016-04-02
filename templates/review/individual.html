@@ -168,9 +168,15 @@
 
 {# Social! #}
 
-<button class="my_own" type="button" onclick="share();">Lets share</button>
+<div class="social-module">
+  <div class="facebook-share" type="button" onclick="facebookShare();">Share to Facebook</div>
+  <div class="twitter-tweet" type="button">
+    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fpreview.mozzstix.com{{ url(item)|url_encode}}&hashtags=mozzstix&text=custom%20share%20text" target="_blank">Tweet to Twitter</a>
+  </div>
+</div>
+
 <script>
-function share() {
+function facebookShare() {
 FB.ui({
   method: 'share',
   href: 'http://preview.mozzstix.com{{ url(item) }}',
@@ -178,14 +184,22 @@ FB.ui({
 }
 </script>
 
-
-
-
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://preview.mozzstix.com{{ url(item) }}" data-text="Check out this review of {{ item.name }}" data-hashtags="mozzstix">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-<br>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 
 

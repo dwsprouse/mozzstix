@@ -446,7 +446,18 @@ p {
 .weight-700 {
   font-weight: 700; }
 
-.custom-social {
+.social-module {
+  position: fixed;
+  top: 50vh;
+  left: 0px;
+  transform: translateY(-100px); }
+
+.facebook-share {
+  width: 100px;
+  height: 100px;
+  background-color: blue; }
+
+.twitter-tweet {
   width: 100px;
   height: 100px;
   background-color: green; }
