@@ -58,87 +58,87 @@
     </div>
     <div class="vr"></div>
   </div>
-  <div class="sidebar">
-    <div class="table">
-      <div class="row">
-        <div class="cell">
-          <p>Crispness</p>
+  <div class="sidebar-wrapper">
+    <div class="sidebar">
+      <div class="table">
+        <div class="row">
+          <div class="cell">
+            <p class="weight-700">Crispness</p>
+          </div>
+          <div class="cell">
+            <div class="rating-wrapper">
+              <div class="rating-{{ item.crispness }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </div>
         </div>
-        <div class="cell">
-          <div class="rating-wrapper">
-            <div class="rating-{{ item.crispness }} rating-sm">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <div class="row">
+          <div class="cell">
+            <p class="weight-700">Breading</p>
+          </div>
+          <div class="cell">
+            <div class="rating-wrapper">
+              <div class="rating-{{ item.breading }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </div>
+        </div>
+       <div class="row">
+          <div class="cell">
+            <p class="weight-700">Gooeyness</p>
+          </div>
+          <div class="cell">
+            <div class="rating-wrapper">
+              <div class="rating-{{ item.gooeyness }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">
+            <p class="weight-700">Cheese</p>
+          </div>
+          <div class="cell">
+            <div class="rating-wrapper">
+              <div class="rating-{{ item.cheese }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </div>
+        </div>
+       <div class="row">
+          <div class="cell">
+            <p class="weight-700">Dip</p>
+          </div>
+          <div class="cell">
+            <div class="rating-wrapper">
+              <div class="rating-{{ item.dip }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">
+            <p class="weight-700">Presentation</p>
+          </div>
+          <div class="cell">
+            <div class="rating-wrapper">
+              <div class="rating-{{ item.presentation }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">
+            <p class="weight-700">Overall</p>
+          </div>
+          <div class="cell">
+            <div class="rating-wrapper">
+              <div class="rating-{{ item.overall }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="cell">
-          <p>Breading</p>
-        </div>
-        <div class="cell">
-          <div class="rating-wrapper">
-            <div class="rating-{{ item.breading }} rating-sm">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-          </div>
-        </div>
-      </div>
-     <div class="row">
-        <div class="cell">
-          <p>Gooeyness</p>
-        </div>
-        <div class="cell">
-          <div class="rating-wrapper">
-            <div class="rating-{{ item.gooeyness }} rating-sm">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="cell">
-          <p>Cheese</p>
-        </div>
-        <div class="cell">
-          <div class="rating-wrapper">
-            <div class="rating-{{ item.cheese }} rating-sm">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-          </div>
-        </div>
-      </div>
-     <div class="row">
-        <div class="cell">
-          <p>Dip</p>
-        </div>
-        <div class="cell">
-          <div class="rating-wrapper">
-            <div class="rating-{{ item.dip }} rating-sm">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="cell">
-          <p>Presentation</p>
-        </div>
-        <div class="cell">
-          <div class="rating-wrapper">
-            <div class="rating-{{ item.presentation }} rating-sm">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-          </div>
-        </div>
+      <div class="sidebar-details">
+        <p><span class="weight-700">Name of dish</span> {{ item.name_of_dish }}</p>
+        <p><span class="weight-700">Price</span> {{ item.price }}</p>
+        <p><span class="weight-700">Price per stick</span> {{ item.price_per_stick }}</p>
       </div>
     </div>
-    <hr>
-    <div class="table">
-      <div class="row">
-        <div class="cell">
-          <p class="weight-800">Overall</p>
-        </div>
-        <div class="cell">
-          <div class="rating-wrapper">
-            <div class="rating-{{ item.overall }} rating-sm">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p><span class="weight-800">Name of dish</span> {{ item.name_of_dish }}</p>
-    <p><span class="weight-800">Price</span> {{ item.price }}</p>
-    <p><span class="weight-800">Price per stick</span> {{ item.price_per_stick }}</p>
   </div>
-
 
   <div class="column-single">
     <div class="quotation">&ldquo;{{ item.promo_quotation }}&rdquo;</div><br>
@@ -168,8 +168,29 @@
 
 {# Social! #}
 
-<div class="fb-share-button" data-href="http://preview.mozzstix.com{{ url(item) }}" data-layout="button"></div>
+<button class="my_own" type="button" onclick="share();">Lets share</button>
+<script>
+function share() {
+FB.ui({
+  method: 'share',
+  href: 'http://preview.mozzstix.com{{ url(item) }}',
+}, function(response){});
+}
+</script>
+
+
+
+
+
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://preview.mozzstix.com{{ url(item) }}" data-text="Check out this review of {{ item.name }}" data-hashtags="mozzstix">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<br>
+
+
+
+
+
+
 
 {% endblock %}

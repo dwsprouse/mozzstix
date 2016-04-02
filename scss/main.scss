@@ -40,6 +40,16 @@ h1 {
 	font-size: 72px;
 	letter-spacing: -.5px;
 }
+p {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 34px;
+	letter-spacing: .5px;
+	text-align: left;
+	color: #502800;
+}
 .quote {
 	font-family: LEngineer;
 	font-weight: normal;
@@ -416,6 +426,38 @@ nav {
 	margin-left: 80px;
 	width: 300px;
 	position: absolute;
+	.rating {
+		letter-spacing: 4px;
+		font-size: 20px;
+	}
+	.rating-wrapper {
+		margin: 0px -30px 0px 0px;
+	}
+}
+.sidebar-details {
+	margin-top: 40px;
+	p {
+		line-height: 34px;
+	}
+}
+.table {
+	display: table;
+	width: 300px;
+}
+.row {
+	display: table-row;
+	&:nth-last-child(2) .cell{
+		padding-bottom: 15px;
+	}
+	&:last-child .cell{
+		padding-top: 15px;
+		border-top: 2px solid #d6ceab;
+	}
+}
+.cell {
+	display: table-cell;
+	vertical-align: middle;
+	padding-bottom: 5px;
 }
 .headline {
 	font-size: 34px;
@@ -441,10 +483,19 @@ nav {
 	background-color: #d6ceab;
 	margin: 25px auto;
 }
-hr {
-	border: 1px solid #d6ceab;
+p {
+	font-size: 22px;
+	line-height: 46px;
+	color: #342d29;
 }
-
+.weight-700 {
+	font-weight: 700;
+}
+.custom-social {
+	width: 100px;
+	height: 100px;
+	background-color: green;
+}
 
 
 /* Detail Pages ----------------------------------*/
@@ -478,6 +529,7 @@ hr {
 		font-weight: 600;
 	}
 }
+
 .left-align-gradient {
 	.hero-content-wrapper {
 		margin: 0;
@@ -489,24 +541,18 @@ hr {
 	}
 }
 
-
+.sidebar-wrapper {
+	float: right;
+	width: 460px;
+}
 .locked-at-top {
 	position: fixed;
-	// top: 200px;
+	top: 190px;
+	right: initial;
+
+
 }
-.table {
-	display: table;
-	width: 340px;
-}
-.row {
-	display: table-row;
-}
-.cell {
-	display: table-cell;
-	vertical-align: top;
-	padding-right: 20px;
-	padding-bottom: 10px;
-}
+
 
 
 @media(max-width: 768px) {
@@ -581,16 +627,7 @@ hr {
 .details {
 	margin-bottom: 0px;
 }
-p {
-	margin: 0;
-	padding: 0;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 34px;
-	letter-spacing: .5px;
-	text-align: left;
-	color: #502800;
-}
+
 .weight-800 {
 	font-weight: 800;
 }
@@ -724,7 +761,7 @@ line-height: 1.2;
 		// background-color: red;
 	}
 	.rating {
-		color: $color-secondary;
+		color: #ffd200;
 		&:after {
 			color: #ec5002;
 		}
