@@ -1,5 +1,14 @@
 {% extends "templates/partials/base.html" %}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block head_extra %}
+<meta property="fb:app_id"       content="371959079641288" />
+<meta property="og:url"          content="http://preview.mozzstix.com{{ url(item) }}" />
+<meta property="og:type"         content="article" />
+<meta property="og:title"        content="{{ item.name }}" />
+<meta property="og:description"  content="&ldquo;{{ item.promo_quotation }}&rdquo;" />
+<meta property="og:image"        content="http://preview.mozzstix.com{{ item.hero_image.url }}" />
+{% endblock %}
+
 {% block content %}
 
 {# <div class="hero dim image {{ item.theme }}" style="background-image:url({{ item.hero_image.url }});">
@@ -17,7 +26,8 @@
     </div>
   </div>
 </div> #}
-<div class="hero">
+
+{# <div class="hero">
     <div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
   <div class="label-container">
     <div class="label">{{ item._type }}</div>
@@ -34,11 +44,21 @@
       </div>
     </div>
   </div>
-</div>
-<hr>
+</div> #}
+
+
+<div class="jumbo-img" style="background-image:url({{ item.hero_image.url }});"></div>
+
 <div class="section-wrapper">
+  <div class="column-header">
+    <div class="headline">{{ item.name }}</div>
+    <p class="location">{{ item.address }}<br>{{ item.city }}, {{ item.state }} {{ item.zip_code }}</p>
+    <div class="rating-wrapper">
+      <div class="rating-overall rating-{{ item.overall}} ">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+    </div>
+    <div class="vr"></div>
+  </div>
   <div class="sidebar">
-    <h2>Ratings</h2>
     <div class="table">
       <div class="row">
         <div class="cell">
@@ -100,6 +120,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <hr>
+    <div class="table">
       <div class="row">
         <div class="cell">
           <p class="weight-800">Overall</p>
@@ -111,33 +134,42 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="single-column details">
-    <h2>Full Review</h2>
-    <p><span class="weight-800">Name</span> {{ item.name_of_dish }}</p>
+    <p><span class="weight-800">Name of dish</span> {{ item.name_of_dish }}</p>
     <p><span class="weight-800">Price</span> {{ item.price }}</p>
-    <p><span class="weight-800">PPM</span> {{ item.price_per_stick }}</p>
-    <br>
+    <p><span class="weight-800">Price per stick</span> {{ item.price_per_stick }}</p>
   </div>
-  <div class="single-column">
+
+
+  <div class="column-single">
+    <div class="quotation">&ldquo;{{ item.promo_quotation }}&rdquo;</div><br>
+  </div>
+  <div class="column-single">
   {% for row in item.review %}
     <p>{{ row.paragraph }}</p><br>
     {% if row.quotation %}
       </div>
-      <div class="single-column">
+      <div class="column-single">
         <div class="quotation">&ldquo;{{ row.quotation }}&rdquo;</div><br>
       </div>
-      <div class="single-column">
+      <div class="column-single">
     {% endif %}
     {% if row.image %}
       </div>
-      <div class="outset-column">
+      <div class="column-outset">
         <img class="scale-img" src="{{ row.image.url }}"/><br>
       </div>
-      <div class="single-column">
+      <div class="column-single">
     {% endif %}
   {% endfor %}
   </div>
-  </div>
 </div>
+
+
+
+{# Social! #}
+
+<div class="fb-share-button" data-href="http://preview.mozzstix.com{{ url(item) }}" data-layout="button"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://preview.mozzstix.com{{ url(item) }}" data-text="Check out this review of {{ item.name }}" data-hashtags="mozzstix">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 {% endblock %}
