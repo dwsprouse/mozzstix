@@ -32,7 +32,7 @@
 </div> #}
 
 <div class="section-wrapper">
-{#   <div class="sidebar">
+  <div class="sidebar">
     <h2>Ingredients</h2>
     {% for key, row in item.ingredients %}
     <div class="row">
@@ -44,14 +44,14 @@
       </div>
     </div>     
     {% endfor %}
-  </div> #}
+  </div>
 
-   <div class="sidebar">
+{#    <div class="sidebar">
     <h2>Ingredients</h2>
     {% for key, row in item.ingredients %}
     <p><b>{{ row|first }}</b> {{ row|last }}</p>  
     {% endfor %}
-  </div>
+  </div> #}
   <div class="single-column">
     <h2>Directions</h2>
     <ol class="directions">
