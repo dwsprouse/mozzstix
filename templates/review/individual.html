@@ -47,7 +47,10 @@
 </div> #}
 
 
-<div class="jumbo-img" style="background-image:url({{ item.hero_image.url }});"></div>
+<div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
+<div class="label-container">
+  <div class="label">{{ item._type }}</div>
+</div>
 
 <div class="section-wrapper">
   <div class="column-header">
@@ -63,7 +66,7 @@
       <div class="table">
         <div class="row">
           <div class="cell">
-            <p class="weight-700">Crispness</p>
+            <p class="weight-700">It Works</p>
           </div>
           <div class="cell">
             <div class="rating-wrapper">
@@ -137,6 +140,16 @@
         <p><span class="weight-700">Price</span> {{ item.price }}</p>
         <p><span class="weight-700">Price per stick</span> {{ item.price_per_stick }}</p>
       </div>
+      <div class="sidebar-details">
+          <div class="social-icon" type="button" onclick="facebookShare();">
+    <img width="50" height="50" src="http://www.mozzstix.com/social/facebook-share.svg"></img>
+  </div>
+  <div class="social-icon" type="button">
+    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fpreview.mozzstix.com{{ url(item)|url_encode}}&hashtags=mozzstix&text=custom%20share%20text" target="_blank">
+      <img width="50" height="50" src="http://www.mozzstix.com/social/twitter-tweet.svg"></img>
+    </a>
+  </div>
+</div>
     </div>
   </div>
 
@@ -167,14 +180,6 @@
 
 
 {# Social! #}
-
-<div class="social-module">
-  <div class="facebook-share" type="button" onclick="facebookShare();">Share to Facebook</div>
-  <div class="twitter-tweet" type="button">
-    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fpreview.mozzstix.com{{ url(item)|url_encode}}&hashtags=mozzstix&text=custom%20share%20text" target="_blank">Tweet to Twitter</a>
-  </div>
-</div>
-
 <script>
 function facebookShare() {
 FB.ui({

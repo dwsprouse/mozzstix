@@ -1,22 +1,42 @@
 $(document).ready(function() {
 
 	var divs = $('div[id^="option-"]').hide(),
-	    i = 0;
+	i = 0;
 	(function cycle() { 
-	    divs.eq(i).fadeIn(400)
-	              .delay(1000)
-	              .fadeOut(400, cycle);
-	    i = ++i % divs.length;
+		divs.eq(i).fadeIn(400)
+			.delay(1000)
+			.fadeOut(400, cycle);
+		i = ++i % divs.length;
 	})();
 
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 450) {
-      $('.sidebar').addClass('locked-at-top');
-    }
-    if ($(window).scrollTop() < 451) {
-      $('.sidebar').removeClass('locked-at-top');
-    }
-  });
+	$(window).scroll(function () {
+		lockSidebar();
+	});
+	$(window).resize(function () {
+		lockSidebar();
+	});
 
+	var heroH = 500;
+	var sidebarH = $('.sidebar').height() + 200;
+
+	function lockSidebar() {
+		if ($(window).height() > sidebarH) {
+			if ($(window).scrollTop() > heroH) {
+				$('.sidebar').addClass('locked-at-top');
+				$('.sidebar').removeClass('locked-at-bottom');
+			}
+			if ($(window).scrollTop() <= heroH) {
+				$('.sidebar').removeClass('locked-at-top');
+			}
+		} else {
+			if ($(window).scrollTop() > heroH + sidebarH - $(window).height()) {
+				$('.sidebar').addClass('locked-at-bottom');
+				$('.sidebar').removeClass('locked-at-top');
+			}
+			if ($(window).scrollTop() <= heroH + sidebarH - $(window).height()) {
+				$('.sidebar').removeClass('locked-at-bottom');
+			}
+		}
+	}
 
  });
