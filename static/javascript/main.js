@@ -16,7 +16,7 @@ $(document).ready(function() {
 		lockSidebar();
 	});
 
-	var heroH = 500;
+	var heroH = 450;
 	var sidebarH = $('.sidebar').height() + 200;
 
 	function lockSidebar() {

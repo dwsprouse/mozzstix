@@ -10,48 +10,20 @@
 {% endblock %}
 
 {% block content %}
-
-{# <div class="hero dim image {{ item.theme }}" style="background-image:url({{ item.hero_image.url }});">
-  <div class="overlay">
-    <div class="hero-content-wrapper">
-      <div class="hero-content">
-        <div class="label">{{ item._type }}</div>
-        <h1>{{ item.name }}</h1>
-        <h2 class="neighborhood">{{item.neighborhood}}</h2>
-        <div class="rating-wrapper">
-          <h1 class="rating-{{ item.overall}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
-        </div>
-        <div class="location">{{ item.address }}<br>{{ item.city }}, {{ item.state }} {{ item.zip_code }}</div>
-      </div>
-    </div>
-  </div>
-</div> #}
-
-{# <div class="hero">
-    <div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
-  <div class="label-container">
-    <div class="label">{{ item._type }}</div>
-  </div>
-  <div class="overlay">
-    <div class="hero-content-wrapper">
-      <div class="hero-content">
-        <h1>{{ item.name }}</h1>
-        <h2 class="neighborhood">{{item.neighborhood}}</h2>
-        <div class="rating-wrapper">
-          <h1 class="rating-{{ item.overall}} star-rating">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</h1>
-        </div>
-        <div class="location">{{ item.address }}<br>{{ item.city }}, {{ item.state }} {{ item.zip_code }}</div>
-      </div>
-    </div>
-  </div>
-</div> #}
-
-
 <div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
 <div class="label-container">
   <div class="label">{{ item._type }}</div>
 </div>
-
+<div class="social-module">
+  <div class="social-icon" type="button" onclick="facebookShare();">
+    <img width="50" height="50" src="http://www.mozzstix.com/social/facebook-share.svg"></img>
+  </div>
+  <div class="social-icon" type="button">
+    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fpreview.mozzstix.com{{ url(item)|url_encode}}&hashtags=mozzstix&text=custom%20share%20text" target="_blank">
+    <img width="50" height="50" src="http://www.mozzstix.com/social/twitter-tweet.svg"></img>
+    </a>
+  </div>
+</div>
 <div class="section-wrapper">
   <div class="column-header">
     <div class="headline">{{ item.name }}</div>
@@ -140,16 +112,6 @@
         <p><span class="weight-700">Price</span> {{ item.price }}</p>
         <p><span class="weight-700">Price per stick</span> {{ item.price_per_stick }}</p>
       </div>
-      <div class="sidebar-details">
-          <div class="social-icon" type="button" onclick="facebookShare();">
-    <img width="50" height="50" src="http://www.mozzstix.com/social/facebook-share.svg"></img>
-  </div>
-  <div class="social-icon" type="button">
-    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fpreview.mozzstix.com{{ url(item)|url_encode}}&hashtags=mozzstix&text=custom%20share%20text" target="_blank">
-      <img width="50" height="50" src="http://www.mozzstix.com/social/twitter-tweet.svg"></img>
-    </a>
-  </div>
-</div>
     </div>
   </div>
 
@@ -176,7 +138,6 @@
   {% endfor %}
   </div>
 </div>
-
 
 
 {# Social! #}
