@@ -1,5 +1,6 @@
 {% extends "templates/partials/base.html" %}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
+
 {% block head_extra %}
 <meta property="fb:app_id"       content="371959079641288" />
 <meta property="og:url"          content="http://preview.mozzstix.com{{ url(item) }}" />
@@ -14,6 +15,7 @@
 <div class="label-container">
   <div class="label">{{ item._type }}</div>
 </div>
+
 <div class="social-module">
   <div class="social-icon" type="button" onclick="facebookShare();">
     <img width="50" height="50" src="http://www.mozzstix.com/social/facebook-share.svg"></img>
@@ -24,6 +26,7 @@
     </a>
   </div>
 </div>
+
 <div class="section-wrapper">
   <div class="column-header">
     <div class="headline">{{ item.name }}</div>
@@ -97,10 +100,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="cell">
+          <div class="cell hr">
             <p class="weight-700">Overall</p>
           </div>
-          <div class="cell">
+          <div class="cell hr">
             <div class="rating-wrapper">
               <div class="rating-{{ item.overall }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
             </div>
@@ -166,11 +169,5 @@ FB.ui({
  
   return t;
 }(document, "script", "twitter-wjs"));</script>
-
-
-
-
-
-
 
 {% endblock %}

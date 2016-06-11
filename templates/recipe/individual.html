@@ -1,68 +1,110 @@
 {% extends "templates/partials/base.html" %}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
-{% block content %}
 
-<div class="hero left-align-gradient">
-  <div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
-  <div class="label-container">
-    <div class="label">{{ item._type }}</div>
+{% block head_extra %}
+<meta property="fb:app_id"       content="371959079641288" />
+<meta property="og:url"          content="http://preview.mozzstix.com{{ url(item) }}" />
+<meta property="og:type"         content="article" />
+<meta property="og:title"        content="{{ item.name }}" />
+<meta property="og:description"  content="&ldquo;{{ item.subheadline }}&rdquo;" />
+<meta property="og:image"        content="http://preview.mozzstix.com{{ item.hero_image.url }}" />
+{% endblock %}
+
+{% block content %}
+<div class="hero-img" style="background-image:url({{ item.hero_image.url }});"></div>
+<div class="label-container">
+  <div class="label">{{ item._type }}</div>
+</div>
+
+<div class="social-module">
+  <div class="social-icon" type="button" onclick="facebookShare();">
+    <img width="50" height="50" src="http://www.mozzstix.com/social/facebook-share.svg"></img>
   </div>
-  <div class="hero-content-wrapper">
-    <div class="hero-content">
-      <h1>{{ item.name }}</h1>
-      <p>{{ item.subheadline }}</p>
+  <div class="social-icon" type="button">
+    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fpreview.mozzstix.com{{ url(item)|url_encode}}&hashtags=mozzstix&text=custom%20share%20text" target="_blank">
+    <img width="50" height="50" src="http://www.mozzstix.com/social/twitter-tweet.svg"></img>
+    </a>
+  </div>
+</div>
+
+<div class="section-wrapper left-sidebar">
+  <div class="column-header">
+    <div class="headline">{{ item.name }}</div>
+    <p class="location">{{ item.subheadline }}</p>
+    <div class="vr"></div>
+  </div>
+
+  <div class="sidebar-wrapper">
+    <div id="ingredients" class="sidebar">
+      <h2>Ingredients</h2>
+      <div class="table">
+        {% for key, row in item.ingredients %}
+          <div class="row">
+            <div class="cell">
+              <p class="measurement">{{ row|first }}</p>
+            </div>
+            <div class="cell">
+              <p>{{ row|last }}</p>
+            </div>
+          </div>     
+        {% endfor %}
+      </div>
     </div>
   </div>
-</div>
-<hr>
 
-{# <div id="recipe-info">
-  <div class="row">
-    <div class="cell no-wrap"><p><strong>Total time</strong></p></div>
-    <div class="cell"><p>{{ item.total_time }}</p></div>
-  </div>
-  <div class="row">
-    <div class="cell no-wrap"><p><strong>Yield</strong></p></div>
-    <div class="cell"><p>{{ item.yield }}</p></div>
-  </div>
-  <div class="row">
-    <div class="cell no-wrap"><p><strong>Skill Level</strong></p></div>
-    <div class="cell"><p>{{ item.skill_level }}</p></div>
-  </div>
-</div> #}
-
-<div class="section-wrapper">
-  <div class="sidebar">
-    <h2>Ingredients</h2>
-    {% for key, row in item.ingredients %}
-    <div class="row">
-      <div class="cell no-wrap">
-        <p class="measurement">{{ row|first }}</p>
-      </div>
-      <div class="cell">
-        <p>{{ row|last }}</p>
-      </div>
-    </div>     
-    {% endfor %}
-  </div>
-
-{#    <div class="sidebar">
-    <h2>Ingredients</h2>
-    {% for key, row in item.ingredients %}
-    <p><b>{{ row|first }}</b> {{ row|last }}</p>  
-    {% endfor %}
-  </div> #}
-  <div class="single-column">
+  <div class="column-single">
     <h2>Directions</h2>
-    <ol class="directions">
-    {% for row in item.directions %}
-      <li><div><p>{{ row.step }}</p>
-      {% if row.step_image %}
-        <img class="margin-top-sm scale-img" src="{{ row.step_image.url }}" />
-      {% endif %}</div>
-      </li>
-      {% endfor %}
-    </ol>
   </div>
+  <ol class="directions">
+  {% for row in item.directions %}
+    <li>
+      <div class="column-single">
+        <p>{{ row.step }}</p>
+        {% if row.step_image %}
+        </div>
+        <div class="column-outset">
+          <img class="margin-top-sm scale-img" src="{{ row.step_image.url }}" />
+        </div>
+        <div class="column-single">
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+  </ol>
+
+
 </div>
+
+{# Social! #}
+<script>
+function facebookShare() {
+FB.ui({
+  method: 'share',
+  href: 'http://preview.mozzstix.com{{ url(item) }}',
+}, function(response){});
+}
+</script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
 {% endblock %}
+
+
+
+
+
