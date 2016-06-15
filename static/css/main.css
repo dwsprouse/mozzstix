@@ -42,6 +42,9 @@ h2 {
   font-size: 36px;
   margin-bottom: 20px; }
 
+.column-header.left-align .headline, .column-header.left-align .location {
+  text-align: left; }
+
 p.subheadline {
   font-weight: 800;
   color: #fff;
@@ -54,6 +57,7 @@ a {
 
 ol, ul {
   padding-left: 0px;
+  margin: 0px;
   list-style-type: none; }
 
 .venue {
@@ -330,34 +334,17 @@ nav {
     transform: translate(-50%, 0%); }
 
   .nav-items-wrapper {
-    position: absolute;
-    top: 60px;
-    left: 0px;
-    height: 44px;
-    width: 100%;
-    background-color: #fff;
-    border-bottom: solid 2px #eee; }
-
-  #nav-items {
-    top: 11px;
-    width: 272px;
-    left: 50%;
-    transform: translate(-50%, 0%); }
-    #nav-items li {
-      margin-left: 40px; }
-      #nav-items li:first-child {
-        margin-left: 0; }
-    #nav-items a {
-      font-size: 16px;
-      letter-spacing: 0px;
-      color: #cc3300; }
-    #nav-items a:hover {
-      border-bottom: solid 4px #cc3300;
-      padding-bottom: 7px; }
+    visibility: hidden; }
 
   #site-content {
-    top: 46px; } }
+    top: 0px; } }
 /* Recipe Detail Page ----------------------------------*/
+.section-label {
+  font-size: 24px;
+  color: #000;
+  font-weight: 800;
+  padding-bottom: 15px; }
+
 #ingredients, #directions, #recipe-info {
   display: table; }
 
@@ -374,9 +361,6 @@ nav {
   white-space: nowrap;
   padding-right: 15px; }
 
-.step-num h1 {
-  line-height: 38px; }
-
 .directions li {
   counter-increment: step-counter;
   font-weight: 400;
@@ -390,9 +374,9 @@ nav {
 
 .directions li:before {
   content: counter(step-counter);
-  margin-right: 20px;
+  margin-right: 15px;
   padding-left: 460px;
-  font-size: 72px;
+  font-size: 56px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   color: white;
@@ -423,7 +407,7 @@ nav {
   max-width: 1200px; }
 
 .column-header {
-  margin: 80px 460px 0px 80px; }
+  margin: 80px 460px 40px 80px; }
 
 .column-single, .column-outset {
   margin: 0px 460px 40px 80px; }
@@ -439,7 +423,8 @@ nav {
   -webkit-transform: translateZ(1px);
   -moz-transform: translateZ(1px);
   -o-transform: translateZ(1px);
-  transform: translateZ(1px); }
+  transform: translateZ(1px);
+  z-index: 2; }
   .sidebar .rating, .sidebar .rating-1, .sidebar .rating-2, .sidebar .rating-3, .sidebar .rating-4, .sidebar .rating-5, .sidebar .rating-1-5, .sidebar .rating-2-5, .sidebar .rating-3-5, .sidebar .rating-4-5 {
     letter-spacing: 4px;
     font-size: 20px; }
@@ -495,7 +480,7 @@ nav {
 
 p {
   font-size: 18px;
-  line-height: 48px;
+  line-height: 40px;
   color: #342d29; }
 
 .weight-700 {
@@ -536,7 +521,7 @@ p {
   margin-right: 0px;
   margin-left: 80px; }
 .section-wrapper.left-sidebar .column-header {
-  margin: 80px 80px 0px 460px; }
+  margin: 80px 80px 40px 460px; }
 .section-wrapper.left-sidebar .column-single, .section-wrapper.left-sidebar .column-outset {
   margin: 0px 80px 40px 460px; }
 .section-wrapper.left-sidebar .sidebar-wrapper {
@@ -545,7 +530,7 @@ p {
 
 @media (max-width: 1024px) {
   .column-header {
-    margin: 80px 400px 0px 80px; }
+    margin: 80px 400px 40px 80px; }
 
   .column-single, .column-outset {
     margin: 0px 400px 40px 80px; }
@@ -554,7 +539,7 @@ p {
     width: 340px; }
 
   .section-wrapper.left-sidebar .column-header {
-    margin: 80px 80px 0px 400px; }
+    margin: 80px 80px 40px 400px; }
   .section-wrapper.left-sidebar .column-single, .section-wrapper.left-sidebar .column-outset {
     margin: 0px 80px 40px 400px; }
   .section-wrapper.left-sidebar .sidebar-wrapper {
@@ -578,7 +563,7 @@ p {
     padding: 40px; }
 
   .column-header {
-    margin: 80px 360px 0px 40px; }
+    margin: 80px 360px 40px 40px; }
 
   .column-single, .column-outset {
     margin: 0px 360px 40px 40px; }
@@ -587,7 +572,7 @@ p {
     width: 300px; }
 
   .section-wrapper.left-sidebar .column-header {
-    margin: 80px 40px 0px 360px; }
+    margin: 80px 40px 40px 360px; }
   .section-wrapper.left-sidebar .column-single, .section-wrapper.left-sidebar .column-outset {
     margin: 0px 40px 40px 360px; }
   .section-wrapper.left-sidebar .sidebar-wrapper {
@@ -618,7 +603,8 @@ p {
 
   .sidebar-wrapper {
     float: none;
-    width: 100%; }
+    width: 100%;
+    display: table; }
 
   .table {
     width: 100%; }
@@ -663,6 +649,10 @@ p {
     margin: 0px 20px 40px 20px; }
   .section-wrapper.left-sidebar .column-header {
     margin: 40px 20px 40px 20px; } }
+.no-bottom-spacing {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important; }
+
 /* About Page ----------------------------------*/
 .uppercase {
   text-transform: uppercase; }

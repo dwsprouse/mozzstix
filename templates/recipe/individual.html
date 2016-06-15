@@ -28,15 +28,17 @@
 </div>
 
 <div class="section-wrapper left-sidebar">
-  <div class="column-header">
+  <div class="column-header left-align">
     <div class="headline">{{ item.name }}</div>
     <p class="location">{{ item.subheadline }}</p>
-    <div class="vr"></div>
+    <p>Total Time: {{ item.total_time }}<p>
+    <p>Yield: {{ item.yield }}<p>
+    <p>Skill Level: {{ item.skill_level }}<p>
   </div>
 
   <div class="sidebar-wrapper">
     <div id="ingredients" class="sidebar">
-      <h2>Ingredients</h2>
+      <div class="section-label">Ingredients</div>
       <div class="table">
         {% for key, row in item.ingredients %}
           <div class="row">
@@ -52,11 +54,12 @@
     </div>
   </div>
 
-  <div class="column-single">
-    <h2>Directions</h2>
+  <div class="column-single no-bottom-spacing">
+    <div class="section-label">Directions</div>
   </div>
   <ol class="directions">
   {% for row in item.directions %}
+
     <li>
       <div class="column-single">
         <p>{{ row.step }}</p>
@@ -71,8 +74,6 @@
     </li>
   {% endfor %}
   </ol>
-
-
 </div>
 
 {# Social! #}

@@ -70,6 +70,11 @@ h2 {
 	font-size: 36px;
 	margin-bottom: 20px;
 }
+.column-header.left-align {
+	.headline, .location {
+		text-align: left;
+	}
+}
 p.subheadline {
 	font-weight: 800;
 	color: #fff;
@@ -82,6 +87,7 @@ a {
 }
 ol, ul {
 	padding-left: 0px;
+	margin: 0px;
 	list-style-type: none;
 }
 .venue {
@@ -364,41 +370,48 @@ nav {
 	transform: translate(-50%, 0%);
 }
 .nav-items-wrapper {
-	position: absolute;
-	top: 60px;
-	left: 0px;
-	height: 44px;
-	width: 100%;
-	background-color: #fff;
-	border-bottom: solid 2px #eee;
+	visibility: hidden;
+	// position: absolute;
+	// top: 60px;
+	// left: 0px;
+	// height: 44px;
+	// width: 100%;
+	// background-color: #fff;
+	// border-bottom: solid 2px #eee;
 }
-#nav-items {
-	top: 11px;
-	width: 272px;
-	left: 50%;
-	transform: translate(-50%, 0%);	
-	li {
-		margin-left: 40px;
-		&:first-child{margin-left: 0;}
-	}
-	a {
-		font-size: 16px;
-		letter-spacing: 0px;
-		color: $default-secondary-color;
-	}
-	a:hover {
-		border-bottom: solid 4px #cc3300;
-		padding-bottom: 7px;
-	}
-}
+// #nav-items {
+// 	top: 11px;
+// 	width: 272px;
+// 	left: 50%;
+// 	transform: translate(-50%, 0%);	
+// 	li {
+// 		margin-left: 40px;
+// 		&:first-child{margin-left: 0;}
+// 	}
+// 	a {
+// 		font-size: 16px;
+// 		letter-spacing: 0px;
+// 		color: $default-secondary-color;
+// 	}
+// 	a:hover {
+// 		border-bottom: solid 4px #cc3300;
+// 		padding-bottom: 7px;
+// 	}
+// }
 #site-content {
-	top: 46px;
+	top: 0px;
 }
 }
 
 
 /* Recipe Detail Page ----------------------------------*/
 
+.section-label {
+	font-size: 24px;
+	color: #000;
+	font-weight: 800;
+	padding-bottom: 15px;
+}
 #ingredients, #directions, #recipe-info {
 	display: table;
 }
@@ -415,11 +428,11 @@ nav {
 	white-space: nowrap;
 	padding-right: 15px;
 }
-.step-num {
-	h1 {
-		line-height: 38px;
-	}
-}
+// .step-num {
+// 	h1 {
+// 		line-height: 38px;
+// 	}
+// }
 .directions li {
 	counter-increment: step-counter;
 	font-weight: 400;
@@ -433,7 +446,7 @@ nav {
 }
 .directions li:before {
 	content: counter(step-counter);
-	margin-right: 20px;
+	margin-right: 15px;
 	padding-left: 460px;
 	@media(max-width: 1024px) {
 		padding-left: 400px;
@@ -447,7 +460,7 @@ nav {
 	@media(max-width: 568px) {
 		padding-left: 20px;
 	}
-	font-size: 72px;
+	font-size: 56px;
 	font-family:'Open Sans', sans-serif;
 	font-weight: 800;
 	color: white;
@@ -470,7 +483,7 @@ nav {
 
 }
 .column-header {
-	margin: 80px 460px 0px 80px;
+	margin: 80px 460px 40px 80px;
 }
 .column-single, .column-outset {
 	margin: 0px 460px 40px 80px;
@@ -487,6 +500,7 @@ nav {
     -moz-transform:translateZ(1px);
     -o-transform:translateZ(1px);
     transform:translateZ(1px);
+    z-index: 2;
 	.rating {
 		letter-spacing: 4px;
 		font-size: 20px;
@@ -547,7 +561,7 @@ nav {
 }
 p {
 	font-size: 18px;
-	line-height: 48px;
+	line-height: 40px;
 	color: #342d29;
 }
 .weight-700 {
@@ -592,7 +606,7 @@ p {
 		margin-left: 80px;
 	}
 	.column-header {
-		margin: 80px 80px 0px 460px;
+		margin: 80px 80px 40px 460px;
 	}
 	.column-single, .column-outset {
 		margin: 0px 80px 40px 460px;
@@ -606,7 +620,7 @@ p {
 
 @media(max-width: 1024px) {
 	.column-header {
-		margin: 80px 400px 0px 80px;
+		margin: 80px 400px 40px 80px;
 	}
 	.column-single, .column-outset {
 		margin: 0px 400px 40px 80px;
@@ -616,7 +630,7 @@ p {
 	}
 	.section-wrapper.left-sidebar {
 		.column-header {
-			margin: 80px 80px 0px 400px;
+			margin: 80px 80px 40px 400px;
 		}
 		.column-single, .column-outset {
 			margin: 0px 80px 40px 400px;
@@ -645,7 +659,7 @@ p {
 		padding: 40px;
 	}
 	.column-header {
-		margin: 80px 360px 0px 40px;
+		margin: 80px 360px 40px 40px;
 	}
 	.column-single, .column-outset {
 		margin: 0px 360px 40px 40px;
@@ -655,7 +669,7 @@ p {
 	}
 	.section-wrapper.left-sidebar {
 		.column-header {
-			margin: 80px 40px 0px 360px;
+			margin: 80px 40px 40px 360px;
 		}
 		.column-single, .column-outset {
 			margin: 0px 40px 40px 360px;
@@ -693,6 +707,7 @@ p {
 	.sidebar-wrapper {
 		float: none;
 		width: 100%;
+		display: table;
 	}
 	.table {
 		width: 100%;
@@ -749,6 +764,10 @@ p {
 			margin: 40px 20px 40px 20px;
 		}
 	}
+}
+.no-bottom-spacing {
+	margin-bottom: 0px !important;
+	padding-bottom: 0px !important;
 }
 
 /* About Page ----------------------------------*/
