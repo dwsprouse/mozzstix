@@ -1,5 +1,9 @@
 $(document).ready(function() {
-
+	$('#hamburger').click(function(){
+		$(this).toggleClass('open');
+		$('nav').toggleClass('open');
+		$('#nav-items').toggleClass('open');
+	});
 	var divs = $('div[id^="option-"]').hide(),
 	i = 0;
 	(function cycle() { 
@@ -14,6 +18,7 @@ $(document).ready(function() {
 	});
 	$(window).resize(function () {
 		lockSidebar();
+		closeHamburger();
 	});
 
 	var heroH = 450;
@@ -35,6 +40,16 @@ $(document).ready(function() {
 			}
 			if ($(window).scrollTop() <= heroH + sidebarH - $(window).height()) {
 				$('.sidebar').removeClass('locked-at-bottom');
+			}
+		}
+	}
+
+	function closeHamburger() {
+		if ($(window).height() > 767) {
+			if ($('#hamburger').hasClass('open')) {
+				$('#hamburger').toggleClass('open');
+				$('nav').toggleClass('open');
+				$('#nav-items').toggleClass('open');
 			}
 		}
 	}
