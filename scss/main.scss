@@ -305,11 +305,19 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 999;
+	-webkit-transform:translateZ(2px);
+	-moz-transform:translateZ(2px);
+	-o-transform:translateZ(2px);
+	transform:translateZ(2px);
+	z-index: 99;
 	height: 60px;
 	width: 100%;
 	background-color: $default-primary-color;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
 }
 nav.open {
 	height: 100%;
@@ -347,7 +355,10 @@ nav.open {
 	li {
 		display: block;
 		margin-left: initial;
-		margin-top: 30px;
+		margin-top: 36px;
+	}
+	a {
+		font-size: 28px
 	}
 	a:hover {
 		padding-bottom: 0px;
@@ -388,19 +399,19 @@ nav.open {
   position: relative;
   left: 40px;
   top: 17px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
+  // -webkit-transform: rotate(0deg);
+  // -moz-transform: rotate(0deg);
+  // -o-transform: rotate(0deg);
+  // transform: rotate(0deg);
+  // -webkit-transition: .5s ease-in-out;
+  // -moz-transition: .5s ease-in-out;
+  // -o-transition: .5s ease-in-out;
+  // transition: .5s ease-in-out;
+  // cursor: pointer;
 }
 @media(max-width: 568px) {
 	#hamburger{
-		left: 20px
+		left: 20px;
 	}
 }
 
@@ -413,14 +424,14 @@ nav.open {
   opacity: 1;
   left: 0;
   border-radius: 3px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  // -webkit-transform: rotate(0deg);
+  // -moz-transform: rotate(0deg);
+  // -o-transform: rotate(0deg);
+  // transform: rotate(0deg);
+  // -webkit-transition: .25s ease-in-out;
+  // -moz-transition: .25s ease-in-out;
+  // -o-transition: .25s ease-in-out;
+  // transition: .25s ease-in-out;
 }
 
 #hamburger span:nth-child(1) {
@@ -460,6 +471,8 @@ nav.open {
   width: 0%;
   left: 50%;
 }
+
+
 
 /* Recipe Detail Page ----------------------------------*/
 
@@ -537,7 +550,6 @@ nav.open {
 	margin: 40px auto;
 	position: relative;
 	max-width: 1200px;
-
 }
 .column-header {
 	margin: 80px 460px 40px 80px;
@@ -554,10 +566,9 @@ nav.open {
 	margin-right: 80px;
 	position: absolute;
 	-webkit-transform:translateZ(1px);
-    -moz-transform:translateZ(1px);
-    -o-transform:translateZ(1px);
-    transform:translateZ(1px);
-    z-index: 2;
+	-moz-transform:translateZ(1px);
+	-o-transform:translateZ(1px);
+	transform:translateZ(1px);
 	.rating {
 		letter-spacing: 4px;
 		font-size: 20px;
@@ -627,12 +638,37 @@ p {
 
 .social-module {
 	position: absolute;
+	z-index: 1px;
+	-webkit-transform:translateZ(1px);
+	-moz-transform:translateZ(1px);
+	-o-transform:translateZ(1px);
+	transform:translateZ(1px);
 	left: 80px;
 	top: 360px;
 }
-.social-icon {
+.in-nav {
+	position: fixed;
+	left: initial;
+	top: 10px;
+	right: 80px;
+	-webkit-transform:translateZ(3px);
+	-moz-transform:translateZ(3px);
+	-o-transform:translateZ(3px);
+	transform:translateZ(3px);
+	z-index: 101;
+	.social-icon {
+		width: 40px;
+		height: 40px;
+	}
+}
+.social-button {
 	display: inline;
 	margin-right: 10px;
+	&:last-child{margin-right: 0px;}
+}
+.social-icon {
+	width: 50px;
+	height: 50px;
 }
 .locked-at-top {
 	position: fixed;
@@ -745,6 +781,11 @@ p {
 		left: 40px;
 		top: 380px;
 	}
+	.in-nav {
+		left: initial;
+		right: 40px;
+		top: 10px;
+	}
 }
 @media(max-width: 668px) {
 	.section-wrapper {
@@ -803,7 +844,13 @@ p {
 	}
 	.social-module {
 		top: 160px;
-		left: 20px;
+	}
+	.social-icon {
+		height: 40px;
+		width: 40px;
+	}
+	.in-nav {
+		top: 10px;
 	}
 }
 @media(max-width: 568px) {
@@ -820,6 +867,13 @@ p {
 		.column-header {
 			margin: 40px 20px 40px 20px;
 		}
+	}
+	.social-module {
+		left: 20px;
+	}
+	.in-nav {
+		left: initial;
+		right: 20px;
 	}
 }
 .no-bottom-spacing {
