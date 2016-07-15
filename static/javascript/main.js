@@ -3,15 +3,24 @@ $(document).ready(function() {
 		$(this).toggleClass('open');
 		$('nav').toggleClass('open');
 		$('#nav-items').toggleClass('open');
+		if ($(this).hasClass('open') && $('.social-module').hasClass('in-nav')) {
+			$('.social-module').hide();
+			$('#logo').show();
+		}
+		if (!$(this).hasClass('open') && $('.social-module').is(":hidden"))  {
+			$('.social-module').show();
+			$('#logo').hide();
+		}
 	});
-	var divs = $('div[id^="option-"]').hide(),
-	i = 0;
-	(function cycle() { 
-		divs.eq(i).fadeIn(400)
-			.delay(1000)
-			.fadeOut(400, cycle);
-		i = ++i % divs.length;
-	})();
+
+	// var divs = $('div[id^="option-"]').hide(),
+	// i = 0;
+	// (function cycle() { 
+	// 	divs.eq(i).fadeIn(400)
+	// 		.delay(1000)
+	// 		.fadeOut(400, cycle);
+	// 	i = ++i % divs.length;
+	// })();
 
 	$(window).scroll(function () {
 		lockSidebar();
