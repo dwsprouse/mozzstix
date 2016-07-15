@@ -2,6 +2,8 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 
 {% block head_extra %}
+<script src="/static/javascript/social.js"></script>
+
 <meta property="fb:app_id"       content="371959079641288" />
 <meta property="og:url"          content="http://preview.mozzstix.com{{ url(item) }}" />
 <meta property="og:type"         content="article" />
@@ -34,7 +36,6 @@
     <div class="rating-wrapper">
       <div class="rating-overall rating-{{ item.overall}} ">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
     </div>
-    <div class="vr"></div>
   </div>
   <div class="sidebar-wrapper">
     <div class="sidebar">
@@ -144,6 +145,7 @@
 
 
 {# Social! #}
+
 <script>
 function facebookShare() {
 FB.ui({
@@ -171,3 +173,9 @@ FB.ui({
 }(document, "script", "twitter-wjs"));</script>
 
 {% endblock %}
+
+
+{% block scripts_extra %}
+<script src="/static/javascript/social.js"></script>
+{% endblock %}
+

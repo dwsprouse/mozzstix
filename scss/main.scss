@@ -106,8 +106,8 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 body {
-	color: white;
 	margin: 0;
+	overflow-x: hidden;
 }
 #site-content {
 	position: relative;
@@ -621,12 +621,12 @@ nav.open {
 	font-size: 64px;
 	line-height: 64px;
 }
-.vr {
-	height: 100px;
-	width: 2px;
-	background-color: #d6ceab;
-	margin: 25px auto;
-}
+// .vr {
+// 	height: 100px;
+// 	width: 2px;
+// 	background-color: #d6ceab;
+// 	margin: 25px auto;
+// }
 p {
 	font-size: 18px;
 	line-height: 40px;
@@ -913,6 +913,7 @@ p {
 }
 .mozzstix-logo {
 	max-width: 600px;
+
 }
 
 
