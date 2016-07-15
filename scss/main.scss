@@ -37,7 +37,7 @@ h1, h2 {
     line-height: 1em;
 }
 h1 {
-	font-size: 72px;
+	font-size: 64px;
 	letter-spacing: -.5px;
 }
 p {
@@ -58,7 +58,7 @@ p {
 }
 h1.quote {
 
-	font-size: 96px;
+	font-size: 72px;
 }
 h1.light {
 	font-weight: 300;
@@ -1072,13 +1072,13 @@ p {
 
 @media(max-width: 1024px) {
 	h1 {font-size: 64px;}
-	h1.quote {font-size: 72px;}
+	h1.quote {font-size: 64px;}
 	.extra-jumbo {font-size: 175px;}
 	.jumbo {font-size: 104px;}
 }
 @media(max-width: 768px) {
 	h1 {font-size: 48px;}
-	h1.quote {font-size: 64px;}
+	h1.quote {font-size: 52px;}
 	h2 {font-size: 28px}
 	.promo-text, .button-text {font-size: 22px;}
 	.extra-jumbo {font-size: 146px;}
@@ -1086,7 +1086,7 @@ p {
 }
 @media(max-width: 568px) {
 	h1 {font-size: 36px;}
-	h1.quote {font-size: 48px;}
+	h1.quote {font-size: 42px;}
 	h2 {font-size: 24px}
 	// p {font-size: $h1-sm * .46;}
 	.button-text {font-size: 18px;}
