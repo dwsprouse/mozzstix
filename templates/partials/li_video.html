@@ -7,7 +7,10 @@
 				<div class="promo-text">{{ item.promo_text}}</div>
 				{% endif %}
 				<h1 class="promo-headline">{{ item.name }}</h1>
-				<div class="button play-button"><a href="{{ url(item) }}"><h1>&#9654</h1></a></div>
+				<!-- <div class="button play-button"><a href="{{ url(item) }}"><h1>&#9654</h1></a></div> -->
+				<div class="button-wrapper">
+					<div class="button"><a href="{{ url(item) }}"><div class="button-text">{{ item.promo_cta|default('Play Now') }}</div></a></div>
+				</div>
 			</div>
 		</div>
 	</div>
