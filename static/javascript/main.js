@@ -12,6 +12,13 @@ $(document).ready(function() {
 			$('#logo').hide();
 		}
 	});
+	$('li').click(function(){
+		closeHamburger();
+	});
+
+	// $(document).on("scrollstop",function(){
+	// 	$('nav').style.top = "0px";
+	// });
 
 	// var divs = $('div[id^="option-"]').hide(),
 	// i = 0;

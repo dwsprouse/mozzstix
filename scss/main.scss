@@ -136,6 +136,40 @@ body {
 	height: 640px;
 	position: relative;
 }
+video {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+}
+@media(min-width:1141px) {
+	video {
+		width: 100%;
+	}
+
+}
+@media(min-width:1025px) and (max-width: 1140px) {
+	video {
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+@media(min-width:1001px) and (max-width: 1024px) {
+	video {
+		width: 100%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+}
+@media(max-width: 1000px) {
+	video {
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
 .promo-content-wrapper {
 	display: table;
 	margin: 0 auto;
@@ -314,15 +348,15 @@ nav {
 	width: 100%;
 	background-color: $default-primary-color;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
-	-webkit-transition: .5s ease-in-out;
-	-moz-transition: .5s ease-in-out;
-	-o-transition: .5s ease-in-out;
-	transition: .5s ease-in-out;
+	// -webkit-transition: height .5s ease;
+	// -moz-transition: height .5s ease;
+	// -o-transition: height .5s ease;
+	// transition: height .5s ease;
 }
 nav.open {
 	height: 100%;
 }
-#hamburger{
+#hamburger {
 	visibility: hidden;
 }
 #nav-items {
@@ -407,7 +441,7 @@ nav.open {
   // -moz-transition: .5s ease-in-out;
   // -o-transition: .5s ease-in-out;
   // transition: .5s ease-in-out;
-  // cursor: pointer;
+  cursor: pointer;
 }
 @media(max-width: 568px) {
 	#hamburger{
