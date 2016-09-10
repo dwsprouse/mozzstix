@@ -136,40 +136,6 @@ body {
 	height: 640px;
 	position: relative;
 }
-video {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 0;
-}
-@media(min-width:1141px) {
-	video {
-		width: 100%;
-	}
-
-}
-@media(min-width:1025px) and (max-width: 1140px) {
-	video {
-		height: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-}
-@media(min-width:1001px) and (max-width: 1024px) {
-	video {
-		width: 100%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-}
-@media(max-width: 1000px) {
-	video {
-		height: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-}
 .promo-content-wrapper {
 	display: table;
 	margin: 0 auto;
@@ -348,15 +314,15 @@ nav {
 	width: 100%;
 	background-color: $default-primary-color;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
-	// -webkit-transition: height .5s ease;
-	// -moz-transition: height .5s ease;
-	// -o-transition: height .5s ease;
-	// transition: height .5s ease;
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
 }
 nav.open {
 	height: 100%;
 }
-#hamburger {
+#hamburger{
 	visibility: hidden;
 }
 #nav-items {
@@ -623,13 +589,14 @@ nav.open {
 }
 .row {
 	display: table-row;
-	&:nth-last-child(2) .cell.hr{
-		padding-bottom: 15px;
+	&:nth-last-child(2){
+		padding-bottom: 30px;
+		// background-color: green;
 	}
 	&:last-child .cell.hr{
 		padding-top: 15px;
-		border-top: 2px solid #d6ceab;
-		width: auto;
+		border-top: 2px solid rgba(0, 0, 0, .2);;
+		// width: auto;
 	}
 }
 .cell {
@@ -677,7 +644,7 @@ p {
 	-moz-transform:translateZ(1px);
 	-o-transform:translateZ(1px);
 	transform:translateZ(1px);
-	left: 80px;
+	right: 80px;
 	top: 360px;
 }
 .in-nav {
@@ -812,7 +779,7 @@ p {
 		width: 260px;
 	}
 	.social-module {
-		left: 40px;
+		right: 40px;
 		top: 380px;
 	}
 	.in-nav {
@@ -903,7 +870,7 @@ p {
 		}
 	}
 	.social-module {
-		left: 20px;
+		right: 20px;
 	}
 	.in-nav {
 		left: initial;
@@ -1001,7 +968,23 @@ p {
 			}
 		}
 	}
-	background-color: $color-bkgd;
+	// background-color: $color-bkgd;
+	p, .headline {
+		color: rgba(0, 0, 0, .8);
+	}
+	p.measurement {
+		color: rgba(0, 0, 0, .4);
+	}
+	p.measurement, li:before, .quotation {
+		color: #ff6600;
+	}
+	.rating {
+		color: rgba(0, 0, 0, .2);
+		&:after {
+			color: #ffdd00;
+		}
+	}
+
 }
 .white {@include theme-generator(#cccccc, #666666, #fff, #000);}
 .velveta {@include theme-generator(#ff6600, #cc3300, #ffa500, #fff);}
