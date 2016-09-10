@@ -11,10 +11,20 @@
 				{% endif %}
 				<h1 class="promo-headline">{{ item.name }}</h1>
 				<!-- <div class="button play-button"><a href="{{ url(item) }}"><h1>&#9654</h1></a></div> -->
-				<div class="button-wrapper">
-					<div class="button"><a href="{{ url(item) }}"><div class="button-text">{{ item.promo_cta|default('Play Now') }}</div></a></div>
-				</div>
+				<a class="lightbox" href="https://www.youtube.com/watch?v=-NN33aMl0s0">
+					<div class="button-wrapper">
+						<div class="button"><div class="button-text">{{ item.promo_cta|default('Play Now') }}</div><div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
+<div id="youtubelightbox" class="parent">
+    <div class="centeredchild">
+        <div class="videowrapper">
+            <div id="playerdiv"></div>
+        </div>
+    </div>
+</div>
+<script src="/static/javascript/youtube.js"></script>

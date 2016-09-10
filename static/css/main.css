@@ -30,7 +30,7 @@ p {
   letter-spacing: -2px; }
 
 h1.quote {
-  font-size: 72px; }
+  font-size: 64px; }
 
 h1.light {
   font-weight: 300; }
@@ -98,7 +98,7 @@ body {
 
 .promo {
   width: 100%;
-  height: 640px;
+  height: 540px;
   position: relative; }
 
 .promo-content-wrapper {
@@ -166,14 +166,76 @@ body {
 .gradient-white .promo-content {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); }
 
-.slant-promo-bottom {
+video {
   position: absolute;
-  top: 640px;
-  z-index: 1; }
+  top: 0px;
+  left: 0px;
+  z-index: 0; }
 
-.slant-promo-top {
+@media (min-width: 961px) {
+  video {
+    width: 100%; } }
+@media (min-width: 10px) and (max-width: 960px) {
+  video {
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%); } }
+/* Parent element can be any width and height */
+.parent {
+  position: fixed;
+  width: 100%;
+  /* can be any width */
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none;
+  text-align: center; }
+
+.parent:before {
+  /* pseudo element to force vertical centering of child element */
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+.parent:after {
+  /* pseudo element to create overlay */
+  background: black;
+  content: '';
   position: absolute;
-  bottom: 640px; }
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 10; }
+
+/* Centered child element can be any width and height */
+.centeredchild {
+  position: relative;
+  /* position element to participate in z-indexing */
+  z-index: 20;
+  /* higher z-index than overlay */
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+  /* can be any width */ }
+
+/* Video container to maintain Youtube 16:9 aspect ratio */
+.videowrapper {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0; }
+
+/* Make Youtube IFRAME responsive */
+.videowrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 /* Rating ----------------------------------*/
 .rating:after, .rating-1:after, .rating-2:after, .rating-3:after, .rating-4:after, .rating-5:after, .rating-1-5:after, .rating-2-5:after, .rating-3-5:after, .rating-4-5:after {
@@ -795,8 +857,6 @@ p {
   background-color: #666666; }
   .white.color-block .location {
     color: #fff; }
-.white .slant-promo-bottom {
-  fill: #fff; }
 .white .label {
   color: #666666; }
 .white .button {
@@ -833,8 +893,6 @@ p {
   background-color: #cc3300; }
   .velveta.color-block .location {
     color: #fff; }
-.velveta .slant-promo-bottom {
-  fill: #ffa500; }
 .velveta .label {
   color: #cc3300; }
 .velveta .button {
@@ -871,8 +929,6 @@ p {
   background-color: #cc3300; }
   .logo.color-block .location {
     color: #fff; }
-.logo .slant-promo-bottom {
-  fill: #e79500; }
 .logo .label {
   color: #cc3300; }
 .logo .button {
@@ -909,8 +965,6 @@ p {
   background-color: #cccc00; }
   .mustard.color-block .location {
     color: #fff; }
-.mustard .slant-promo-bottom {
-  fill: #ffd200; }
 .mustard .label {
   color: #cccc00; }
 .mustard .button {
@@ -947,8 +1001,6 @@ p {
   background-color: #660000; }
   .ketchup.color-block .location {
     color: #fff; }
-.ketchup .slant-promo-bottom {
-  fill: #cc6666; }
 .ketchup .label {
   color: #660000; }
 .ketchup .button {
@@ -985,8 +1037,6 @@ p {
   background-color: #003300; }
   .lettuce.color-block .location {
     color: #fff; }
-.lettuce .slant-promo-bottom {
-  fill: #669966; }
 .lettuce .label {
   color: #003300; }
 .lettuce .button {
@@ -1023,8 +1073,6 @@ p {
   background-color: #cc3300; }
   .velveta-blk.color-block .location {
     color: #fff; }
-.velveta-blk .slant-promo-bottom {
-  fill: #ffa500; }
 .velveta-blk .label {
   color: #cc3300; }
 .velveta-blk .button {
@@ -1061,8 +1109,6 @@ p {
   background-color: #d6ceab; }
   .panko.color-block .location {
     color: #fff; }
-.panko .slant-promo-bottom {
-  fill: #fff5cb; }
 .panko .label {
   color: #d6ceab; }
 .panko .button {
@@ -1089,13 +1135,6 @@ p {
 
 /* Page Format Media Queries ----------------------------------*/
 @media (max-width: 1024px) {
-  .promo {
-    height: 560px; }
-
-  .bottom-slant {
-    position: absolute;
-    top: 400px; }
-
   #recipe-info {
     top: 250px; }
 
@@ -1167,18 +1206,6 @@ p {
   height: initial; }
 
 /* Text Size Media Queries ----------------------------------*/
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 64px; }
-
-  h1.quote {
-    font-size: 64px; }
-
-  .extra-jumbo {
-    font-size: 175px; }
-
-  .jumbo {
-    font-size: 104px; } }
 @media (max-width: 768px) {
   h1 {
     font-size: 48px; }
@@ -1190,13 +1217,7 @@ p {
     font-size: 28px; }
 
   .promo-text, .button-text {
-    font-size: 22px; }
-
-  .extra-jumbo {
-    font-size: 146px; }
-
-  .jumbo {
-    font-size: 86px; } }
+    font-size: 22px; } }
 @media (max-width: 568px) {
   h1 {
     font-size: 36px; }
@@ -1208,10 +1229,4 @@ p {
     font-size: 24px; }
 
   .button-text {
-    font-size: 18px; }
-
-  .extra-jumbo {
-    font-size: 80px; }
-
-  .jumbo {
-    font-size: 48px; } }
+    font-size: 18px; } }
